@@ -1,9 +1,9 @@
 extends Node2D
 
 
-onready var animation_player : AnimationPlayer = get_node("AnimationPlayer")
-onready var item : Node2D = get_node("Item")
-onready var shelf_sprite : Sprite = get_node("ShelfSprite")
+onready var animation_player : AnimationPlayer = get_node("ItemOnShelfAnimationPlayer")
+onready var item : Node2D = get_node("%Item")
+onready var shelf_sprite : Sprite= get_node("%ShelfSprite")
 
 export var item_name : String = 'potion'
 export var flipH : bool = false
