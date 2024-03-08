@@ -27,11 +27,3 @@ Maka dari itu, untuk memberikan keunggulan pada pemain, diberikan fitur `run`.
 Untuk membatasi penggunaan `run` ini, pemain diberikan _stamina bar_ yang menandakan seberapa lama `run` yang bisa dilakukan oleh pemain.
 
 ---
-
-TODO Next :
-
-- Change `Desk` size
-- Fix `PaintCan` coloring (+ line file)
-- Completing `MainCharacter` Sprite
-- Add `MainCharacter` animation (`idle`, `walk`, `run`)
-- Add interaction with `Item` and `PaintCan`

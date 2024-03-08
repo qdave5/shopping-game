@@ -1,0 +1,280 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://assets/characters/head/hair/front_hair_3.png" type="Texture" id=1]
+[ext_resource path="res://assets/characters/head/hair/front_hair_4.png" type="Texture" id=2]
+[ext_resource path="res://assets/characters/head/hair/top_front_hair.png" type="Texture" id=3]
+[ext_resource path="res://assets/characters/head/hair/top_single_hair.png" type="Texture" id=4]
+[ext_resource path="res://scripts/characters/Player.gd" type="Script" id=5]
+[ext_resource path="res://assets/characters/head/hair/front_hair_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/characters/head/hair/front_hair_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/characters/head/hair/back_hair_1.png" type="Texture" id=8]
+[ext_resource path="res://assets/characters/head/face/face.png" type="Texture" id=9]
+[ext_resource path="res://assets/characters/head/hair/back_hair_2.png" type="Texture" id=10]
+[ext_resource path="res://assets/characters/head/hair/back_hair_4.png" type="Texture" id=11]
+[ext_resource path="res://assets/characters/head/hair/back_hair_3.png" type="Texture" id=12]
+[ext_resource path="res://assets/characters/head/hair/top_back_hair.png" type="Texture" id=13]
+[ext_resource path="res://assets/characters/head/face/eyes_open.png" type="Texture" id=14]
+[ext_resource path="res://assets/characters/limbs/upper/hand.png" type="Texture" id=15]
+[ext_resource path="res://assets/characters/limbs/upper/lower_arm.png" type="Texture" id=16]
+[ext_resource path="res://assets/characters/body/body.png" type="Texture" id=17]
+[ext_resource path="res://assets/characters/body/waist.png" type="Texture" id=18]
+[ext_resource path="res://assets/characters/limbs/upper/upper_arm.png" type="Texture" id=19]
+[ext_resource path="res://assets/characters/limbs/upper/shoulder.png" type="Texture" id=20]
+[ext_resource path="res://assets/characters/limbs/upper/elbow.png" type="Texture" id=21]
+[ext_resource path="res://assets/characters/limbs/lower/knee.png" type="Texture" id=22]
+[ext_resource path="res://assets/characters/limbs/lower/leg_to_body.png" type="Texture" id=23]
+[ext_resource path="res://assets/characters/limbs/lower/upper_leg.png" type="Texture" id=24]
+[ext_resource path="res://assets/characters/limbs/lower/lower_leg.png" type="Texture" id=25]
+[ext_resource path="res://assets/characters/limbs/lower/shoe.png" type="Texture" id=26]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 30, 20 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "idle"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Position2D/FrontHair:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 2.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Position2D/FrontHair:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -50 ), Vector2( 0, -47 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "run"
+
+[sub_resource type="Animation" id=3]
+resource_name = "walk"
+
+[node name="MainCharacter" type="KinematicBody2D"]
+script = ExtResource( 5 )
+
+[node name="Position2D" type="Position2D" parent="."]
+
+[node name="BackHair" type="Node2D" parent="Position2D"]
+position = Vector2( 0, -50 )
+
+[node name="BackTopHair" type="Sprite" parent="Position2D/BackHair"]
+position = Vector2( 0, -6 )
+texture = ExtResource( 13 )
+
+[node name="BackHair4" type="Sprite" parent="Position2D/BackHair"]
+position = Vector2( 13, 2 )
+texture = ExtResource( 11 )
+offset = Vector2( 2, 3 )
+
+[node name="BackHair3" type="Sprite" parent="Position2D/BackHair"]
+position = Vector2( -7, 7 )
+texture = ExtResource( 12 )
+offset = Vector2( -2, 2 )
+
+[node name="BackHair2" type="Sprite" parent="Position2D/BackHair"]
+position = Vector2( -14, 1 )
+texture = ExtResource( 10 )
+offset = Vector2( -1, 5 )
+
+[node name="BackHair1" type="Sprite" parent="Position2D/BackHair"]
+position = Vector2( -16, -4 )
+texture = ExtResource( 8 )
+offset = Vector2( -6, 5 )
+
+[node name="LeftArm" type="Node2D" parent="Position2D"]
+position = Vector2( 9, -26 )
+
+[node name="Shoulder" type="Sprite" parent="Position2D/LeftArm"]
+position = Vector2( -2, -2 )
+texture = ExtResource( 20 )
+flip_h = true
+
+[node name="UpperArm" type="Sprite" parent="Position2D/LeftArm/Shoulder"]
+rotation = -0.575959
+texture = ExtResource( 19 )
+offset = Vector2( -3, 8 )
+
+[node name="Elbow" type="Sprite" parent="Position2D/LeftArm/Shoulder/UpperArm"]
+position = Vector2( -6.49224, 13.6693 )
+rotation = 0.436332
+texture = ExtResource( 21 )
+
+[node name="LowerArm" type="Sprite" parent="Position2D/LeftArm/Shoulder/UpperArm/Elbow"]
+position = Vector2( 1, 1 )
+rotation = 0.349066
+texture = ExtResource( 16 )
+offset = Vector2( 3, 6 )
+
+[node name="Hand" type="Sprite" parent="Position2D/LeftArm/Shoulder/UpperArm/Elbow/LowerArm"]
+position = Vector2( 7.4007, 9.3381 )
+texture = ExtResource( 15 )
+offset = Vector2( 1, 2 )
+
+[node name="Body" type="Node2D" parent="Position2D"]
+position = Vector2( 0, -14 )
+
+[node name="LowerBody" type="Sprite" parent="Position2D/Body"]
+position = Vector2( 0, 2 )
+texture = ExtResource( 18 )
+
+[node name="UpperBody" type="Sprite" parent="Position2D/Body"]
+texture = ExtResource( 17 )
+offset = Vector2( 0, -9 )
+
+[node name="Face" type="Node2D" parent="Position2D"]
+position = Vector2( -1, -50 )
+
+[node name="Face" type="Sprite" parent="Position2D/Face"]
+texture = ExtResource( 9 )
+
+[node name="Eyes" type="Sprite" parent="Position2D/Face"]
+position = Vector2( 6, 0 )
+texture = ExtResource( 14 )
+
+[node name="FrontHair" type="Node2D" parent="Position2D"]
+position = Vector2( 0, -50 )
+
+[node name="FrontTopHair" type="Sprite" parent="Position2D/FrontHair"]
+position = Vector2( -2, -12 )
+texture = ExtResource( 3 )
+
+[node name="FrontHair4" type="Sprite" parent="Position2D/FrontHair"]
+position = Vector2( 13, -12 )
+texture = ExtResource( 2 )
+offset = Vector2( 5, 5 )
+
+[node name="FrontHair3" type="Sprite" parent="Position2D/FrontHair"]
+position = Vector2( 9, -15 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 7 )
+
+[node name="FrontHair2" type="Sprite" parent="Position2D/FrontHair"]
+position = Vector2( 1, -14 )
+texture = ExtResource( 6 )
+offset = Vector2( -4, 7 )
+
+[node name="FrontHair1" type="Sprite" parent="Position2D/FrontHair"]
+position = Vector2( -8, -14 )
+texture = ExtResource( 7 )
+offset = Vector2( -3, 11 )
+
+[node name="FrontTopSingle" type="Sprite" parent="Position2D/FrontHair"]
+position = Vector2( -1, -26 )
+texture = ExtResource( 4 )
+offset = Vector2( 2, -2 )
+
+[node name="LeftLeg" type="Node2D" parent="Position2D"]
+position = Vector2( 7, 3 )
+
+[node name="LegToBody" type="Sprite" parent="Position2D/LeftLeg"]
+position = Vector2( -3, -6 )
+rotation = -0.383972
+texture = ExtResource( 23 )
+
+[node name="UpperLeg" type="Sprite" parent="Position2D/LeftLeg/LegToBody"]
+position = Vector2( -1, 2 )
+rotation = -0.244346
+texture = ExtResource( 24 )
+offset = Vector2( -2, 12 )
+
+[node name="Knee" type="Sprite" parent="Position2D/LeftLeg/LegToBody/UpperLeg"]
+position = Vector2( -5, 21 )
+z_index = -1
+texture = ExtResource( 22 )
+
+[node name="LowerLeg" type="Sprite" parent="Position2D/LeftLeg/LegToBody/UpperLeg/Knee"]
+position = Vector2( 0, 1 )
+rotation = 0.314159
+texture = ExtResource( 25 )
+offset = Vector2( -3, 12 )
+
+[node name="Shoe" type="Sprite" parent="Position2D/LeftLeg/LegToBody/UpperLeg/Knee/LowerLeg"]
+position = Vector2( -6, 26 )
+rotation = 0.279253
+texture = ExtResource( 26 )
+offset = Vector2( 0, 3 )
+
+[node name="RightLeg" type="Node2D" parent="Position2D"]
+position = Vector2( 0, 2 )
+
+[node name="LegToBody" type="Sprite" parent="Position2D/RightLeg"]
+position = Vector2( -3, -6 )
+texture = ExtResource( 23 )
+
+[node name="UpperLeg" type="Sprite" parent="Position2D/RightLeg/LegToBody"]
+position = Vector2( -1, 2 )
+rotation = -0.244346
+texture = ExtResource( 24 )
+offset = Vector2( -2, 12 )
+
+[node name="Knee" type="Sprite" parent="Position2D/RightLeg/LegToBody/UpperLeg"]
+position = Vector2( -5, 21 )
+z_index = -1
+texture = ExtResource( 22 )
+
+[node name="LowerLeg" type="Sprite" parent="Position2D/RightLeg/LegToBody/UpperLeg/Knee"]
+position = Vector2( 0, 1 )
+rotation = 0.314159
+texture = ExtResource( 25 )
+offset = Vector2( -3, 12 )
+
+[node name="Shoe" type="Sprite" parent="Position2D/RightLeg/LegToBody/UpperLeg/Knee/LowerLeg"]
+position = Vector2( -6, 26 )
+rotation = -0.0698132
+texture = ExtResource( 26 )
+offset = Vector2( 0, 3 )
+
+[node name="RightArm" type="Node2D" parent="Position2D"]
+position = Vector2( -8, -27 )
+
+[node name="Shoulder" type="Sprite" parent="Position2D/RightArm"]
+position = Vector2( 1, -2 )
+texture = ExtResource( 20 )
+
+[node name="UpperArm" type="Sprite" parent="Position2D/RightArm/Shoulder"]
+position = Vector2( -1, -1 )
+rotation = -0.191986
+z_index = 1
+texture = ExtResource( 19 )
+offset = Vector2( -3, 8 )
+
+[node name="Elbow" type="Sprite" parent="Position2D/RightArm/Shoulder/UpperArm"]
+position = Vector2( -8.3427, 16.7152 )
+rotation = 0.436332
+z_index = -1
+texture = ExtResource( 21 )
+
+[node name="LowerArm" type="Sprite" parent="Position2D/RightArm/Shoulder/UpperArm/Elbow"]
+position = Vector2( 1, 1 )
+texture = ExtResource( 16 )
+offset = Vector2( 3, 6 )
+
+[node name="Hand" type="Sprite" parent="Position2D/RightArm/Shoulder/UpperArm/Elbow/LowerArm"]
+position = Vector2( 7.4007, 9.3381 )
+texture = ExtResource( 15 )
+offset = Vector2( 1, 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idle = SubResource( 1 )
+anims/run = SubResource( 2 )
+anims/walk = SubResource( 3 )
