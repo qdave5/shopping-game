@@ -27,3 +27,9 @@ Maka dari itu, untuk memberikan keunggulan pada pemain, diberikan fitur `run`.
 Untuk membatasi penggunaan `run` ini, pemain diberikan _stamina bar_ yang menandakan seberapa lama `run` yang bisa dilakukan oleh pemain.
 
 ---
+
+## Teknologi
+
+- Krita
+
+Semua aset visual yang digunakan pada game ini menggunakan aplikasi Krita. Krita merupakan sebuah aplikasi gratis yang dapat digunakan untuk membuat ilustrasi, gambar, animasi, dan lain sebagainya.
