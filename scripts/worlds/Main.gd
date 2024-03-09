@@ -11,7 +11,6 @@ func _ready():
 	mainBackground.modulate = get_node("/root/Global").MAIN_THEME['summer'].palette1
 	playButton.modulate = get_node("/root/Global").MAIN_THEME['summer'].palette3
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
