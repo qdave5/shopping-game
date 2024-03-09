@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://assets/characters/head/hair/front_hair_3.png" type="Texture" id=1]
 [ext_resource path="res://assets/characters/head/hair/front_hair_4.png" type="Texture" id=2]
@@ -840,6 +840,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ ExtResource( 14 ), ExtResource( 27 ), ExtResource( 14 ) ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stopBlink"
+} ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle"
@@ -1638,6 +1652,22 @@ tracks/65/keys = {
 "values": [ -33.0 ]
 }
 
+[sub_resource type="Animation" id=15]
+resource_name = "no_blink"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Position2D/Face/Eyes:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 14 ) ]
+}
+
 [sub_resource type="Animation" id=2]
 resource_name = "run"
 loop = true
@@ -2391,8 +2421,26 @@ tracks/61/keys = {
 "values": [ 0.0, 7.0, 0.0, 7.0 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=7]
+[sub_resource type="AnimationNodeAnimation" id=16]
 animation = "blink"
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "no_blink"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+advance_condition = "isBlink"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=17]
+states/blink/node = SubResource( 16 )
+states/blink/position = Vector2( 520, 109 )
+states/no_blink/node = SubResource( 20 )
+states/no_blink/position = Vector2( 733, 109 )
+transitions = [ "no_blink", "blink", SubResource( 21 ), "blink", "no_blink", SubResource( 22 ) ]
+start_node = "no_blink"
 
 [sub_resource type="AnimationNodeBlend2" id=8]
 
@@ -2415,11 +2463,11 @@ input_2/auto_advance = false
 animation = "walk"
 
 [sub_resource type="AnimationNodeBlendTree" id=12]
-graph_offset = Vector2( -303.982, 11.7188 )
-nodes/blink/node = SubResource( 7 )
-nodes/blink/position = Vector2( -40, 480 )
-nodes/final_blend/node = SubResource( 8 )
-nodes/final_blend/position = Vector2( 144.807, 248.262 )
+graph_offset = Vector2( -363.498, 229.378 )
+nodes/blink/node = SubResource( 17 )
+nodes/blink/position = Vector2( -20, 500 )
+nodes/eyes_blend/node = SubResource( 8 )
+nodes/eyes_blend/position = Vector2( 144.807, 248.262 )
 nodes/idle/node = SubResource( 9 )
 nodes/idle/position = Vector2( -260, 220 )
 nodes/output/position = Vector2( 380, 200 )
@@ -2429,7 +2477,9 @@ nodes/state/node = SubResource( 10 )
 nodes/state/position = Vector2( -60, 240 )
 nodes/walk/node = SubResource( 11 )
 nodes/walk/position = Vector2( -260, 340 )
-node_connections = [ "state", 0, "idle", "state", 1, "walk", "state", 2, "run", "output", 0, "final_blend", "final_blend", 0, "state", "final_blend", 1, "blink" ]
+node_connections = [ "state", 0, "idle", "state", 1, "walk", "state", 2, "run", "output", 0, "eyes_blend", "eyes_blend", 0, "state", "eyes_blend", 1, "blink" ]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=19]
 
 [node name="MainCharacter" type="KinematicBody2D"]
 script = ExtResource( 5 )
@@ -2461,7 +2511,7 @@ offset = Vector2( -3, 8 )
 
 [node name="LowerArm" type="Sprite" parent="Position2D/LeftArm/Shadow"]
 position = Vector2( 1.12943, 13.8511 )
-rotation = 0.209439
+rotation = 0.20944
 texture = ExtResource( 16 )
 offset = Vector2( 3, 6 )
 
@@ -2566,7 +2616,7 @@ texture = ExtResource( 23 )
 
 [node name="Knee" type="Sprite" parent="Position2D/LeftLeg/Shadow"]
 position = Vector2( 5.12042, 16.1573 )
-rotation = -0.628318
+rotation = -0.628319
 texture = ExtResource( 22 )
 
 [node name="LowerLeg" type="Sprite" parent="Position2D/LeftLeg/Shadow"]
@@ -2577,7 +2627,7 @@ offset = Vector2( -3, 12 )
 
 [node name="UpperLeg" type="Sprite" parent="Position2D/LeftLeg/Shadow"]
 position = Vector2( -3.17797, -3.77103 )
-rotation = -0.628318
+rotation = -0.628319
 texture = ExtResource( 24 )
 offset = Vector2( -2, 12 )
 
@@ -2661,6 +2711,7 @@ shape = SubResource( 4 )
 anims/RESET = SubResource( 5 )
 anims/blink = SubResource( 6 )
 anims/idle = SubResource( 1 )
+anims/no_blink = SubResource( 15 )
 anims/run = SubResource( 2 )
 anims/walk = SubResource( 14 )
 
@@ -2668,7 +2719,9 @@ anims/walk = SubResource( 14 )
 tree_root = SubResource( 12 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/final_blend/blend_amount = 0.5
+parameters/blink/playback = SubResource( 19 )
+parameters/blink/conditions/isBlink = false
+parameters/eyes_blend/blend_amount = 0.5
 parameters/state/current = 1
 
 [node name="SelectArea" type="Area2D" parent="."]

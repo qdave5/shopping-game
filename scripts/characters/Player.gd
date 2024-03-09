@@ -1,11 +1,15 @@
 extends KinematicBody2D
 
+var rng = RandomNumberGenerator.new()
+
 onready var playerSprite : Position2D = get_node("Position2D")
+onready var animationPlayer : AnimationPlayer = get_node("AnimationPlayer")
 onready var animationTree : AnimationTree = get_node("AnimationTree")
 
 onready var characterColor : Dictionary = get_node("/root/Global").charactersColor.main_character
 onready var themeColor : Dictionary = get_node("/root/Global").MAIN_THEME
 
+var blinkTime : float = 2
 var currentAnimation : String = "idle"
 var animationTransitionMap : Dictionary = {
 	'idle': 0,
@@ -77,6 +81,10 @@ func get_input():
 		speed = DEFAULT_SPEED
 
 func update_animation():
+	if (Time.get_ticks_msec() > blinkTime):
+		doBlink()
+		blinkTime = Time.get_ticks_msec() + (rng.randf_range(5, 8) * 1000)
+	
 	if direction.x < 0:
 		playerSprite.scale.x = -1
 	elif direction.x > 0:
@@ -92,3 +100,9 @@ func update_animation():
 	
 	if animationTransitionMap[currentAnimation] != animationTree.get("parameters/state/current"):
 		animationTree.set("parameters/state/current", animationTransitionMap[currentAnimation])
+
+func doBlink():
+	animationTree.set('parameters/blink/conditions/isBlink', true)
+
+func stopBlink():
+	animationTree.set('parameters/blink/conditions/isBlink', false)
