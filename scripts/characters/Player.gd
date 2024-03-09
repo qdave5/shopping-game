@@ -1,17 +1,24 @@
 extends KinematicBody2D
 
 onready var playerSprite : Position2D = get_node("Position2D")
-onready var animationPlayer : AnimationPlayer = get_node("AnimationPlayer")
+onready var animationTree : AnimationTree = get_node("AnimationTree")
 
 onready var characterColor : Dictionary = get_node("/root/Global").charactersColor.main_character
 onready var themeColor : Dictionary = get_node("/root/Global").MAIN_THEME
 
+var currentAnimation : String = "idle"
+var animationTransitionMap : Dictionary = {
+	'idle': 0,
+	'walk': 1,
+	'run': 2,
+}
+
 var velocity : Vector2 = Vector2()
 var direction : Vector2 = Vector2.ZERO
 
-var DEFAULT_SPEED = 400
-var SPRINTING_SPEED = 700
-var speed : int = 400
+var DEFAULT_SPEED = 300
+var SPRINTING_SPEED = 600
+var speed : int
 
 var stamina : int = 100
 var isSprint : bool = false
@@ -20,9 +27,9 @@ var isSprint : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	colorCharacterBodyParts()
+	setCharacterBodyPartsColor()
 
-func colorCharacterBodyParts():
+func setCharacterBodyPartsColor():
 	# skin
 	$Position2D/Face/Face.modulate = characterColor.skinColor
 	$Position2D/RightHand/RightHand.modulate = characterColor.skinColor
@@ -53,10 +60,10 @@ func colorCharacterBodyParts():
 	$Position2D/LeftLeg/Shadow.modulate = themeColor['summer'].shadow
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+#func _process(delta):
+#	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	get_input()
 	update_animation()
@@ -70,15 +77,18 @@ func get_input():
 		speed = DEFAULT_SPEED
 
 func update_animation():
-	if Input.is_action_pressed("ui_left"):
+	if direction.x < 0:
 		playerSprite.scale.x = -1
-	if Input.is_action_pressed("ui_right"):
+	elif direction.x > 0:
 		playerSprite.scale.x = 1
 	
 	if velocity == Vector2.ZERO:
-		animationPlayer.play("idle")
+		currentAnimation ="idle"
 	else:
 		if isSprint:
-			animationPlayer.play("run")
+			currentAnimation = "run"
 		else:
-			animationPlayer.play("walk")
+			currentAnimation = "walk"
+	
+	if animationTransitionMap[currentAnimation] != animationTree.get("parameters/state/current"):
+		animationTree.set("parameters/state/current", animationTransitionMap[currentAnimation])
