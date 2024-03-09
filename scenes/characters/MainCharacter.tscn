@@ -2415,7 +2415,7 @@ input_2/auto_advance = false
 animation = "walk"
 
 [sub_resource type="AnimationNodeBlendTree" id=12]
-graph_offset = Vector2( -545.532, 74.6881 )
+graph_offset = Vector2( -303.982, 11.7188 )
 nodes/blink/node = SubResource( 7 )
 nodes/blink/position = Vector2( -40, 480 )
 nodes/final_blend/node = SubResource( 8 )
