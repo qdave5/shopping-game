@@ -28,7 +28,7 @@
 [ext_resource path="res://assets/characters/limbs/lower/shoe.png" type="Texture" id=26]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 30, 20 )
+extents = Vector2( 30, 16 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle"
@@ -45,12 +45,12 @@ resource_name = "walk"
 script = ExtResource( 5 )
 
 [node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 0, -36 )
 
 [node name="LeftArm" type="Node2D" parent="Position2D"]
 position = Vector2( 9, -26 )
 
 [node name="Shadow" type="Node2D" parent="Position2D/LeftArm"]
-modulate = Color( 0.8, 0.8, 0.8, 1 )
 
 [node name="Shoulder" type="Sprite" parent="Position2D/LeftArm/Shadow"]
 position = Vector2( -2, -2 )
@@ -75,7 +75,6 @@ texture = ExtResource( 16 )
 offset = Vector2( 3, 6 )
 
 [node name="LeftHand" type="Node2D" parent="Position2D"]
-modulate = Color( 0.8, 0.8, 0.8, 1 )
 position = Vector2( 9, -26 )
 
 [node name="LeftHand" type="Sprite" parent="Position2D/LeftHand"]
@@ -168,7 +167,6 @@ offset = Vector2( 2, -2 )
 position = Vector2( 7, 3 )
 
 [node name="Shadow" type="Node2D" parent="Position2D/LeftLeg"]
-modulate = Color( 0.8, 0.8, 0.8, 1 )
 
 [node name="LegToBody" type="Sprite" parent="Position2D/LeftLeg/Shadow"]
 position = Vector2( -3, -6 )
@@ -193,11 +191,10 @@ texture = ExtResource( 24 )
 offset = Vector2( -2, 12 )
 
 [node name="LeftShoe" type="Node2D" parent="Position2D"]
-modulate = Color( 0.8, 0.8, 0.8, 1 )
 position = Vector2( 7, 3 )
 
 [node name="LeftShoe" type="Sprite" parent="Position2D/LeftShoe"]
-position = Vector2( 8.0363, 43.5479 )
+position = Vector2( 8.036, 43.548 )
 rotation = -0.034906
 texture = ExtResource( 26 )
 offset = Vector2( 0, 3 )
@@ -234,7 +231,7 @@ position = Vector2( -11.3282, 46.0742 )
 
 [node name="RightShoe" type="Sprite" parent="Position2D/RightShoe"]
 texture = ExtResource( 26 )
-offset = Vector2( 0, 3 )
+offset = Vector2( 0, 4 )
 
 [node name="RightArm" type="Node2D" parent="Position2D"]
 position = Vector2( -8, -27 )
@@ -269,7 +266,7 @@ texture = ExtResource( 15 )
 offset = Vector2( 1, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+position = Vector2( 0, 5 )
 shape = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -3,7 +3,8 @@ extends KinematicBody2D
 onready var playerSprite : Position2D = get_node("Position2D")
 onready var animationPlayer : AnimationPlayer = get_node("AnimationPlayer")
 
-onready var globalVariables : Node = get_node("/root/Global")
+onready var characterColor : Dictionary = get_node("/root/Global").charactersColor.main_character
+onready var themeColor : Dictionary = get_node("/root/Global").MAIN_THEME
 
 var velocity : Vector2 = Vector2()
 var direction : Vector2 = Vector2.ZERO
@@ -23,27 +24,33 @@ func _ready():
 
 func colorCharacterBodyParts():
 	# skin
-	$Position2D/Face/Face.modulate = globalVariables.skinColor
-	$Position2D/RightHand/RightHand.modulate = globalVariables.skinColor
-	$Position2D/LeftHand/LeftHand.modulate = globalVariables.skinColor
+	$Position2D/Face/Face.modulate = characterColor.skinColor
+	$Position2D/RightHand/RightHand.modulate = characterColor.skinColor
+	$Position2D/LeftHand/LeftHand.modulate = characterColor.skinColor
 	
 	# hair
-	$Position2D/FrontHair.modulate = globalVariables.hairColor
-	$Position2D/BackHair.modulate = globalVariables.hairColor
+	$Position2D/FrontHair.modulate = characterColor.hairColor
+	$Position2D/BackHair.modulate = characterColor.hairColor
 	
 	# cloth
-	$Position2D/RightArm.modulate = globalVariables.clothColor
-	$Position2D/LeftArm.modulate = globalVariables.clothColor
-	$Position2D/Body/UpperBody.modulate = globalVariables.clothColor
+	$Position2D/RightArm.modulate = characterColor.clothColor
+	$Position2D/LeftArm.modulate = characterColor.clothColor
+	$Position2D/Body/UpperBody.modulate = characterColor.clothColor
 	
 	# leggins
-	$Position2D/RightLeg.modulate = globalVariables.legginsColor
-	$Position2D/LeftLeg.modulate = globalVariables.legginsColor
-	$Position2D/Body/LowerBody.modulate = globalVariables.clothColor
+	$Position2D/RightLeg.modulate = characterColor.legginsColor
+	$Position2D/LeftLeg.modulate = characterColor.legginsColor
+	$Position2D/Body/LowerBody.modulate = characterColor.clothColor
 	
 	# shoes
-	$Position2D/RightShoe/RightShoe.modulate = globalVariables.shoesColor
-	$Position2D/LeftShoe/LeftShoe.modulate = globalVariables.shoesColor
+	$Position2D/RightShoe/RightShoe.modulate = characterColor.shoesColor
+	$Position2D/LeftShoe/LeftShoe.modulate = characterColor.shoesColor
+	
+	#shadow
+	$Position2D/LeftHand.modulate = themeColor['summer'].shadow
+	$Position2D/LeftShoe.modulate = themeColor['summer'].shadow
+	$Position2D/LeftArm/Shadow.modulate = themeColor['summer'].shadow
+	$Position2D/LeftLeg/Shadow.modulate = themeColor['summer'].shadow
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
