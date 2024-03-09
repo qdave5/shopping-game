@@ -1,12 +1,30 @@
 extends Node
 
-#var items_inventory : ItemsInventory = $ItemsInventory
+const MAIN_THEME = {
+	'summer': {
+		'palette1': 'FFF78A',
+		'palette2': 'FFE382',
+		'palette3': 'FFC47E',
+		'palette4': 'FFAD84'
+	}
+}
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+const MAIN_COLOR = {
+	'black': Color.black,
+	'white': Color.white,
+	'red': Color.red,
+	'blue': Color.blue,
+	'yellow': Color.yellow,
+	'purple': Color.purple,
+	'orange': Color.orange,
+	'green': Color.green,
+	'brown': Color.brown
+}
 
+var skinColor = 'e7e1b2'
+var hairColor = 'eeeb3c'
+var clothColor = '2562e5'
+var legginsColor = '1f2145'
+var shoesColor = 'ff2424'
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+var shadowColor = 'cccccc'

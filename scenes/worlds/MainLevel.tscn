@@ -43,26 +43,21 @@ position = Vector2( 464, 408 )
 
 [node name="MelonShelf" parent="YSort/Shelves/FruitShelves" instance=ExtResource( 7 )]
 position = Vector2( 464, 528 )
-item_name = "melon"
 
 [node name="PotionShelves" type="Node2D" parent="YSort/Shelves"]
 
 [node name="PotionShelf" parent="YSort/Shelves/PotionShelves" instance=ExtResource( 7 )]
 position = Vector2( 848, 400 )
-item_name = "potion"
 
 [node name="PotionLongShelf" parent="YSort/Shelves/PotionShelves" instance=ExtResource( 7 )]
 position = Vector2( 848, 528 )
-item_name = "potion_long"
 
 [node name="PotionSquareShelf" parent="YSort/Shelves/PotionShelves" instance=ExtResource( 7 )]
 position = Vector2( 1008, 400 )
-item_name = "potion_square"
 flipH = true
 
 [node name="PotionLongTriangleShelf" parent="YSort/Shelves/PotionShelves" instance=ExtResource( 7 )]
 position = Vector2( 1008, 528 )
-item_name = "potion_triangle"
 flipH = true
 
 [node name="DoorSprite" type="Sprite" parent="YSort"]

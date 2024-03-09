@@ -34,30 +34,6 @@ extents = Vector2( 30, 20 )
 resource_name = "idle"
 length = 2.0
 loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Position2D/FrontHair:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 2.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Position2D/FrontHair:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, -50 ), Vector2( 0, -47 ) ]
-}
 
 [sub_resource type="Animation" id=2]
 resource_name = "run"
@@ -70,11 +46,49 @@ script = ExtResource( 5 )
 
 [node name="Position2D" type="Position2D" parent="."]
 
+[node name="LeftArm" type="Node2D" parent="Position2D"]
+position = Vector2( 9, -26 )
+
+[node name="Shadow" type="Node2D" parent="Position2D/LeftArm"]
+modulate = Color( 0.8, 0.8, 0.8, 1 )
+
+[node name="Shoulder" type="Sprite" parent="Position2D/LeftArm/Shadow"]
+position = Vector2( -2, -2 )
+texture = ExtResource( 20 )
+flip_h = true
+
+[node name="Elbow" type="Sprite" parent="Position2D/LeftArm/Shadow"]
+position = Vector2( -1.14441e-05, 13 )
+rotation = -0.139627
+texture = ExtResource( 21 )
+
+[node name="UpperArm" type="Sprite" parent="Position2D/LeftArm/Shadow"]
+position = Vector2( -2, -2 )
+rotation = -0.575959
+texture = ExtResource( 19 )
+offset = Vector2( -3, 8 )
+
+[node name="LowerArm" type="Sprite" parent="Position2D/LeftArm/Shadow"]
+position = Vector2( 1.12943, 13.8511 )
+rotation = 0.209439
+texture = ExtResource( 16 )
+offset = Vector2( 3, 6 )
+
+[node name="LeftHand" type="Node2D" parent="Position2D"]
+modulate = Color( 0.8, 0.8, 0.8, 1 )
+position = Vector2( 9, -26 )
+
+[node name="LeftHand" type="Sprite" parent="Position2D/LeftHand"]
+position = Vector2( 6.42691, 24.5238 )
+rotation = 0.209439
+texture = ExtResource( 15 )
+offset = Vector2( 1, 2 )
+
 [node name="BackHair" type="Node2D" parent="Position2D"]
 position = Vector2( 0, -50 )
 
 [node name="BackTopHair" type="Sprite" parent="Position2D/BackHair"]
-position = Vector2( 0, -6 )
+position = Vector2( 0, -8 )
 texture = ExtResource( 13 )
 
 [node name="BackHair4" type="Sprite" parent="Position2D/BackHair"]
@@ -96,35 +110,6 @@ offset = Vector2( -1, 5 )
 position = Vector2( -16, -4 )
 texture = ExtResource( 8 )
 offset = Vector2( -6, 5 )
-
-[node name="LeftArm" type="Node2D" parent="Position2D"]
-position = Vector2( 9, -26 )
-
-[node name="Shoulder" type="Sprite" parent="Position2D/LeftArm"]
-position = Vector2( -2, -2 )
-texture = ExtResource( 20 )
-flip_h = true
-
-[node name="UpperArm" type="Sprite" parent="Position2D/LeftArm/Shoulder"]
-rotation = -0.575959
-texture = ExtResource( 19 )
-offset = Vector2( -3, 8 )
-
-[node name="Elbow" type="Sprite" parent="Position2D/LeftArm/Shoulder/UpperArm"]
-position = Vector2( -6.49224, 13.6693 )
-rotation = 0.436332
-texture = ExtResource( 21 )
-
-[node name="LowerArm" type="Sprite" parent="Position2D/LeftArm/Shoulder/UpperArm/Elbow"]
-position = Vector2( 1, 1 )
-rotation = 0.349066
-texture = ExtResource( 16 )
-offset = Vector2( 3, 6 )
-
-[node name="Hand" type="Sprite" parent="Position2D/LeftArm/Shoulder/UpperArm/Elbow/LowerArm"]
-position = Vector2( 7.4007, 9.3381 )
-texture = ExtResource( 15 )
-offset = Vector2( 1, 2 )
 
 [node name="Body" type="Node2D" parent="Position2D"]
 position = Vector2( 0, -14 )
@@ -151,7 +136,7 @@ texture = ExtResource( 14 )
 position = Vector2( 0, -50 )
 
 [node name="FrontTopHair" type="Sprite" parent="Position2D/FrontHair"]
-position = Vector2( -2, -12 )
+position = Vector2( -2, -13 )
 texture = ExtResource( 3 )
 
 [node name="FrontHair4" type="Sprite" parent="Position2D/FrontHair"]
@@ -182,31 +167,38 @@ offset = Vector2( 2, -2 )
 [node name="LeftLeg" type="Node2D" parent="Position2D"]
 position = Vector2( 7, 3 )
 
-[node name="LegToBody" type="Sprite" parent="Position2D/LeftLeg"]
+[node name="Shadow" type="Node2D" parent="Position2D/LeftLeg"]
+modulate = Color( 0.8, 0.8, 0.8, 1 )
+
+[node name="LegToBody" type="Sprite" parent="Position2D/LeftLeg/Shadow"]
 position = Vector2( -3, -6 )
 rotation = -0.383972
 texture = ExtResource( 23 )
 
-[node name="UpperLeg" type="Sprite" parent="Position2D/LeftLeg/LegToBody"]
-position = Vector2( -1, 2 )
-rotation = -0.244346
-texture = ExtResource( 24 )
-offset = Vector2( -2, 12 )
-
-[node name="Knee" type="Sprite" parent="Position2D/LeftLeg/LegToBody/UpperLeg"]
-position = Vector2( -5, 21 )
-z_index = -1
+[node name="Knee" type="Sprite" parent="Position2D/LeftLeg/Shadow"]
+position = Vector2( 5.12042, 16.1573 )
+rotation = -0.628318
 texture = ExtResource( 22 )
 
-[node name="LowerLeg" type="Sprite" parent="Position2D/LeftLeg/LegToBody/UpperLeg/Knee"]
-position = Vector2( 0, 1 )
-rotation = 0.314159
+[node name="LowerLeg" type="Sprite" parent="Position2D/LeftLeg/Shadow"]
+position = Vector2( 5.70821, 16.9663 )
+rotation = -0.314159
 texture = ExtResource( 25 )
 offset = Vector2( -3, 12 )
 
-[node name="Shoe" type="Sprite" parent="Position2D/LeftLeg/LegToBody/UpperLeg/Knee/LowerLeg"]
-position = Vector2( -6, 26 )
-rotation = 0.279253
+[node name="UpperLeg" type="Sprite" parent="Position2D/LeftLeg/Shadow"]
+position = Vector2( -3.17797, -3.77103 )
+rotation = -0.628318
+texture = ExtResource( 24 )
+offset = Vector2( -2, 12 )
+
+[node name="LeftShoe" type="Node2D" parent="Position2D"]
+modulate = Color( 0.8, 0.8, 0.8, 1 )
+position = Vector2( 7, 3 )
+
+[node name="LeftShoe" type="Sprite" parent="Position2D/LeftShoe"]
+position = Vector2( 8.0363, 43.5479 )
+rotation = -0.034906
 texture = ExtResource( 26 )
 offset = Vector2( 0, 3 )
 
@@ -217,26 +209,30 @@ position = Vector2( 0, 2 )
 position = Vector2( -3, -6 )
 texture = ExtResource( 23 )
 
-[node name="UpperLeg" type="Sprite" parent="Position2D/RightLeg/LegToBody"]
-position = Vector2( -1, 2 )
+[node name="Knee" type="Sprite" parent="Position2D/RightLeg"]
+position = Vector2( -3.77112, 17.5858 )
 rotation = -0.244346
-texture = ExtResource( 24 )
-offset = Vector2( -2, 12 )
-
-[node name="Knee" type="Sprite" parent="Position2D/RightLeg/LegToBody/UpperLeg"]
-position = Vector2( -5, 21 )
-z_index = -1
+scale = Vector2( 1, 1 )
 texture = ExtResource( 22 )
 
-[node name="LowerLeg" type="Sprite" parent="Position2D/RightLeg/LegToBody/UpperLeg/Knee"]
-position = Vector2( 0, 1 )
-rotation = 0.314159
+[node name="LowerLeg" type="Sprite" parent="Position2D/RightLeg"]
+position = Vector2( -3.5292, 18.5561 )
+rotation = 0.069813
+scale = Vector2( 1, 1 )
 texture = ExtResource( 25 )
 offset = Vector2( -3, 12 )
 
-[node name="Shoe" type="Sprite" parent="Position2D/RightLeg/LegToBody/UpperLeg/Knee/LowerLeg"]
-position = Vector2( -6, 26 )
-rotation = -0.0698132
+[node name="UpperLeg" type="Sprite" parent="Position2D/RightLeg"]
+position = Vector2( -4, -4 )
+rotation = -0.244346
+scale = Vector2( 1, 1 )
+texture = ExtResource( 24 )
+offset = Vector2( -2, 12 )
+
+[node name="RightShoe" type="Node2D" parent="Position2D"]
+position = Vector2( -11.3282, 46.0742 )
+
+[node name="RightShoe" type="Sprite" parent="Position2D/RightShoe"]
 texture = ExtResource( 26 )
 offset = Vector2( 0, 3 )
 
@@ -247,26 +243,28 @@ position = Vector2( -8, -27 )
 position = Vector2( 1, -2 )
 texture = ExtResource( 20 )
 
-[node name="UpperArm" type="Sprite" parent="Position2D/RightArm/Shoulder"]
-position = Vector2( -1, -1 )
-rotation = -0.191986
-z_index = 1
-texture = ExtResource( 19 )
-offset = Vector2( -3, 8 )
-
-[node name="Elbow" type="Sprite" parent="Position2D/RightArm/Shoulder/UpperArm"]
-position = Vector2( -8.3427, 16.7152 )
-rotation = 0.436332
-z_index = -1
+[node name="Elbow" type="Sprite" parent="Position2D/RightArm"]
+position = Vector2( -5.00002, 15 )
+rotation = 0.244346
 texture = ExtResource( 21 )
 
-[node name="LowerArm" type="Sprite" parent="Position2D/RightArm/Shoulder/UpperArm/Elbow"]
-position = Vector2( 1, 1 )
+[node name="LowerArm" type="Sprite" parent="Position2D/RightArm"]
+position = Vector2( -4.27164, 16.2122 )
+rotation = 0.244346
 texture = ExtResource( 16 )
 offset = Vector2( 3, 6 )
 
-[node name="Hand" type="Sprite" parent="Position2D/RightArm/Shoulder/UpperArm/Elbow/LowerArm"]
-position = Vector2( 7.4007, 9.3381 )
+[node name="UpperArm" type="Sprite" parent="Position2D/RightArm"]
+position = Vector2( 0, -3 )
+rotation = -0.191986
+texture = ExtResource( 19 )
+offset = Vector2( -3, 8 )
+
+[node name="RightHand" type="Node2D" parent="Position2D"]
+position = Vector2( -7.34986, 0.0632839 )
+rotation = 0.244346
+
+[node name="RightHand" type="Sprite" parent="Position2D/RightHand"]
 texture = ExtResource( 15 )
 offset = Vector2( 1, 2 )
 
