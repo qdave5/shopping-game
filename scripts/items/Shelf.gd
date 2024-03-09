@@ -22,7 +22,7 @@ func _ready():
 	item.updateSpriteTexture(itemName)
 
 func _process(delta):
-	print(canTakeItem)
+	pass
 
 
 func _on_SelectionArea_area_entered(area):

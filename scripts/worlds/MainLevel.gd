@@ -1,6 +1,7 @@
 extends Node2D
 
 onready var camera : Camera2D = get_node("Camera2D")
+onready var mainUI : Node2D = get_node("MainUI")
 onready var mainCharacter : KinematicBody2D = get_node("%main_character")
 onready var floorTexture : TextureRect = get_node("Floor")
 onready var outboundArea : TileMap = get_node("YSort/OutboundBGTileMap")
@@ -30,3 +31,4 @@ func setCameraBound():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	camera.position = mainCharacter.position
+	mainUI.position = OS.window_size

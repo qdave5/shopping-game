@@ -71,10 +71,10 @@ flipH = true
 
 [node name="main_character" parent="YSort" instance=ExtResource( 2 )]
 unique_name_in_owner = true
-position = Vector2( 184, 688 )
+position = Vector2( 123, 336 )
 
 [node name="Door" type="Sprite" parent="YSort"]
-position = Vector2( 0, 432 )
+position = Vector2( 0, 344 )
 texture = ExtResource( 4 )
 
 [node name="Desk" parent="YSort" instance=ExtResource( 8 )]
@@ -84,11 +84,13 @@ position = Vector2( 192, 160 )
 position = Vector2( 512, 300 )
 current = true
 
-[node name="Timer" type="Node2D" parent="."]
-position = Vector2( 888, 40 )
+[node name="MainUI" type="Node2D" parent="."]
+
+[node name="Timer" type="Node2D" parent="MainUI"]
+position = Vector2( 904, 24 )
 scale = Vector2( 5, 5 )
 
-[node name="Label" type="Label" parent="Timer"]
+[node name="Label" type="Label" parent="MainUI/Timer"]
 modulate = Color( 0.941176, 0.0627451, 0.0627451, 1 )
 margin_left = -16.0
 margin_right = 20.0
@@ -96,8 +98,15 @@ margin_bottom = 14.0
 text = "00:00"
 script = ExtResource( 6 )
 
-[node name="Timer" type="Timer" parent="Timer"]
+[node name="Timer" type="Timer" parent="MainUI/Timer"]
 wait_time = 5.0
 autostart = true
 
-[connection signal="timeout" from="Timer/Timer" to="Timer/Label" method="_on_Timer_timeout"]
+[node name="EnergyBar" type="Node2D" parent="MainUI"]
+position = Vector2( 16, 16 )
+
+[node name="ColorRect" type="ColorRect" parent="MainUI/EnergyBar"]
+margin_right = 368.0
+margin_bottom = 40.0
+
+[connection signal="timeout" from="MainUI/Timer/Timer" to="MainUI/Timer/Label" method="_on_Timer_timeout"]
