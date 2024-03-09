@@ -28,7 +28,7 @@
 [ext_resource path="res://assets/characters/limbs/lower/shoe.png" type="Texture" id=26]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 30, 16 )
+extents = Vector2( 30, 10 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle"
@@ -161,7 +161,7 @@ offset = Vector2( -3, 11 )
 [node name="FrontTopSingle" type="Sprite" parent="Position2D/FrontHair"]
 position = Vector2( -1, -26 )
 texture = ExtResource( 4 )
-offset = Vector2( 2, -2 )
+offset = Vector2( 8, -2 )
 
 [node name="LeftLeg" type="Node2D" parent="Position2D"]
 position = Vector2( 7, 3 )
@@ -209,20 +209,17 @@ texture = ExtResource( 23 )
 [node name="Knee" type="Sprite" parent="Position2D/RightLeg"]
 position = Vector2( -3.77112, 17.5858 )
 rotation = -0.244346
-scale = Vector2( 1, 1 )
 texture = ExtResource( 22 )
 
 [node name="LowerLeg" type="Sprite" parent="Position2D/RightLeg"]
 position = Vector2( -3.5292, 18.5561 )
 rotation = 0.069813
-scale = Vector2( 1, 1 )
 texture = ExtResource( 25 )
 offset = Vector2( -3, 12 )
 
 [node name="UpperLeg" type="Sprite" parent="Position2D/RightLeg"]
 position = Vector2( -4, -4 )
 rotation = -0.244346
-scale = Vector2( 1, 1 )
 texture = ExtResource( 24 )
 offset = Vector2( -2, 12 )
 
@@ -266,10 +263,16 @@ texture = ExtResource( 15 )
 offset = Vector2( 1, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 5 )
+position = Vector2( 0, 11 )
 shape = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 1 )
 anims/run = SubResource( 2 )
 anims/walk = SubResource( 3 )
+
+[node name="SelectArea" type="Area2D" parent="."]
+position = Vector2( 0, 11 )
+
+[node name="CollisionSelectArea" type="CollisionPolygon2D" parent="SelectArea"]
+polygon = PoolVector2Array( -10, -8, -10, -24, 10, -24, 10, -8, 38, -8, 38, 8, 10, 8, 10, 23, -10, 23, -10, 8, -38, 8, -38, -8 )

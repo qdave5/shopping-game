@@ -2,10 +2,10 @@ extends Node
 
 const MAIN_THEME = {
 	'summer': {
-		'palette1': 'FFF78A',
-		'palette2': 'FFE382',
-		'palette3': 'FFC47E',
-		'palette4': 'FFAD84',
+		'palette1': 'fff78a',
+		'palette2': 'ffe382',
+		'palette3': 'ffc47e',
+		'palette4': 'ffad84',
 		'shadow': 'c8c8a3',
 		'level': {
 			'desk': 'ffc47e',
@@ -13,6 +13,7 @@ const MAIN_THEME = {
 			'floor': 'fff78a',
 			'outbound_area': '231812',
 			'paint_can': 'ffad84',
+			'shelf': 'ffc47e',
 			'wall': 'feffe4',
 		},
 	}
@@ -28,6 +29,9 @@ const MAIN_COLOR = {
 	'orange': Color.orange,
 	'green': Color.green,
 	'brown': Color.brown,
+	'success': Color.green,
+	'warning': Color.yellow,
+	'danger': Color.red,
 }
 
 var charactersColor = {

@@ -31,44 +31,47 @@ tile_set = ExtResource( 5 )
 format = 1
 tile_data = PoolIntArray( -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -131055, 0, 0, -131054, 0, 0, -131053, 0, 0, -131052, 0, 0, -131051, 0, 0, -131050, 0, 0, -131049, 0, 0, -131048, 0, 0, -131047, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, -65515, 0, 0, -65514, 0, 0, -65513, 0, 0, -65512, 0, 0, -65511, 0, 0 )
 
-[node name="main_character" parent="YSort" instance=ExtResource( 2 )]
-unique_name_in_owner = true
-position = Vector2( 128, 439 )
-
 [node name="PaintCans" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 544, 32 )
 
-[node name="Shelves" type="Node2D" parent="YSort"]
+[node name="Shelves" type="YSort" parent="YSort"]
 position = Vector2( -128, 192 )
+z_as_relative = false
 
-[node name="FruitShelves" type="Node2D" parent="YSort/Shelves"]
+[node name="FruitShelves" type="YSort" parent="YSort/Shelves"]
+z_as_relative = false
 
 [node name="AppleShelf" parent="YSort/Shelves/FruitShelves" instance=ExtResource( 7 )]
-position = Vector2( 464, 408 )
+position = Vector2( 464, 406 )
 itemName = "apple"
 
 [node name="MelonShelf" parent="YSort/Shelves/FruitShelves" instance=ExtResource( 7 )]
-position = Vector2( 464, 528 )
+position = Vector2( 464, 504 )
 itemName = "melon"
 
-[node name="PotionShelves" type="Node2D" parent="YSort/Shelves"]
+[node name="PotionShelves" type="YSort" parent="YSort/Shelves"]
+z_as_relative = false
 
 [node name="PotionShelf" parent="YSort/Shelves/PotionShelves" instance=ExtResource( 7 )]
-position = Vector2( 848, 400 )
+position = Vector2( 848, 406 )
 
 [node name="PotionLongShelf" parent="YSort/Shelves/PotionShelves" instance=ExtResource( 7 )]
-position = Vector2( 848, 528 )
+position = Vector2( 848, 504 )
 itemName = "potion_long"
 
 [node name="PotionSquareShelf" parent="YSort/Shelves/PotionShelves" instance=ExtResource( 7 )]
-position = Vector2( 1008, 400 )
+position = Vector2( 1008, 406 )
 itemName = "potion_square"
 flipH = true
 
 [node name="PotionTriangleShelf" parent="YSort/Shelves/PotionShelves" instance=ExtResource( 7 )]
-position = Vector2( 1008, 528 )
+position = Vector2( 1008, 504 )
 itemName = "potion_triangle"
 flipH = true
+
+[node name="main_character" parent="YSort" instance=ExtResource( 2 )]
+unique_name_in_owner = true
+position = Vector2( 184, 688 )
 
 [node name="Door" type="Sprite" parent="YSort"]
 position = Vector2( 0, 432 )
@@ -82,11 +85,15 @@ position = Vector2( 512, 300 )
 current = true
 
 [node name="Timer" type="Node2D" parent="."]
-position = Vector2( 78, 53 )
+position = Vector2( 888, 40 )
+scale = Vector2( 5, 5 )
 
 [node name="Label" type="Label" parent="Timer"]
-margin_right = 40.0
+modulate = Color( 0.941176, 0.0627451, 0.0627451, 1 )
+margin_left = -16.0
+margin_right = 20.0
 margin_bottom = 14.0
+text = "00:00"
 script = ExtResource( 6 )
 
 [node name="Timer" type="Timer" parent="Timer"]
