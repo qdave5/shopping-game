@@ -2,7 +2,7 @@
 
 ## TODO
 
-- Add `MainCharacter` animation (`idle`, `walk`, `run`)
+- Add `MainCharacter` animation (`run`)
 - Add interaction with `Item` and `PaintCan`
 - Add inventory system
 - Add change `Item` color feature
@@ -31,6 +31,13 @@
   - Color blind support (need more research)
 
 ---
+
+## [0.1.17] - 9 March 2024
+
+- Add `AnimationTree` for the `MainCharacter`
+- Add eye blinking animation
+- Add background animation on `Main`
+- Fix minor bug in `MainCharacter` animation
 
 ## [0.1.11] - 9 March 2024
 
