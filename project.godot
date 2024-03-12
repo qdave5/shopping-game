@@ -8,6 +8,28 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://resources/Inventory.gd"
+}, {
+"base": "Resource",
+"class": "Item",
+"language": "GDScript",
+"path": "res://resources/Item.gd"
+}, {
+"base": "Resource",
+"class": "MouseColor",
+"language": "GDScript",
+"path": "res://resources/MouseColour.gd"
+} ]
+_global_script_class_icons={
+"Inventory": "",
+"Item": "",
+"MouseColor": ""
+}
+
 [application]
 
 config/name="Project"
@@ -18,6 +40,11 @@ config/icon="res://icon.png"
 
 Global="*res://scripts/Global.gd"
 ItemsInventory="*res://scripts/controls/ItemsInventory.gd"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [gui]
 
