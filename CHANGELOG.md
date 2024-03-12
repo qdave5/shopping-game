@@ -2,7 +2,8 @@
 
 ## TODO
 
-- Add interaction with `Item` and `PaintCan`
+- Add interaction with `Item` and `PaintCan` (function)
+- Add area effect indicator on `PaintCan`
 - Add change `Item` color feature (on progress)
 - Add submit `Item` area
 - Add `Item` shopping list + randomizer
@@ -19,8 +20,9 @@
   - Drinks
 - Change some assets size
   - Apple
-- Completing `SideCharacter` and `CharacterIcon` Sprite
+- Completing `CharacterIcon`
 - Add `MainCharacter` animation (`run`) (TODO)
+- Completing `SideCharacter` Sprite (optional)
 - Write game documentations (optional)
 - Add `TutorialLevel` (optional)
 - Add color customization (optional)
@@ -29,6 +31,11 @@
   - Color blind support (need more research)
 
 ---
+
+## [0.1.25] - 12 March 2024
+
+- Refactor `MainLevel` layouts
+- Init `MainCharacter`'s interaction to object (`Shelf` and `PaintCan`)
 
 ## [0.1.22] - 12 March 2024
 
