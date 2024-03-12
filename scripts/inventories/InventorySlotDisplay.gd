@@ -1,7 +1,7 @@
 extends CenterContainer
 
 onready var globalColor : Dictionary = get_node("/root/Global").MAIN_COLOR
-var mouseColour  = preload("res://resources/MouseColour.tres")
+var mouseColor  = preload("res://resources/MouseColor.tres")
 var inventory = preload("res://resources/Inventory.tres")
 
 onready var lineTextureRect : TextureRect = get_node("LineTextureRect")
@@ -24,10 +24,10 @@ func display_item(item):
 		colorTextureRect.modulate = globalColor.white
 
 
-func _on_InventorySlotDisplay_gui_input(event):
+func _on_InventorySlotDisplay_gui_input(_event):
 	if Input.is_mouse_button_pressed(1):
 		var item_index = get_index()
-		inventory.change_item_color(item_index, mouseColour.colour)
+		inventory.change_item_color(item_index, mouseColor.color)
 
 func _on_InventorySlotDisplay_mouse_entered():
 	itemEffectTextureRect.modulate = globalColor.success

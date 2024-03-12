@@ -19,7 +19,7 @@ anchor_bottom = 0.0
 margin_left = 343.0
 margin_right = 682.0
 margin_bottom = 600.0
-colour = "yellow"
+color = "yellow"
 
 [node name="BluePaintColorSlotDisplay" parent="." instance=ExtResource( 1 )]
 anchor_right = 0.0
@@ -27,4 +27,4 @@ anchor_bottom = 0.0
 margin_left = 686.0
 margin_right = 1024.0
 margin_bottom = 600.0
-colour = "blue"
+color = "blue"

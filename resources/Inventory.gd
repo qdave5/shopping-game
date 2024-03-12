@@ -3,6 +3,8 @@ class_name Inventory
 
 signal items_changed(indexes)
 
+var colorsResource = preload("res://resources/Colors.tres")
+
 const MAX_SIZE = 8
 
 export(Array, Resource) var items = []
@@ -14,10 +16,9 @@ func add_item(item):
 		return item
 
 func change_item_color(item_index, newColor):
-	print(item_index, newColor)
 	if item_index < items.size():
-		items[item_index].color = newColor
-		emit_signal("items_changed", item_index)
+		items[item_index].color = colorsResource.combineColor(items[item_index].color, newColor)
+		emit_signal("items_changed", [item_index])
 		return items[item_index]
 
 func remove_item(item_index):

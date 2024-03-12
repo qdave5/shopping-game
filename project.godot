@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
+"class": "Colors",
+"language": "GDScript",
+"path": "res://resources/Colors.gd"
+}, {
+"base": "Resource",
 "class": "Inventory",
 "language": "GDScript",
 "path": "res://resources/Inventory.gd"
@@ -22,9 +27,10 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "MouseColor",
 "language": "GDScript",
-"path": "res://resources/MouseColour.gd"
+"path": "res://resources/MouseColor.gd"
 } ]
 _global_script_class_icons={
+"Colors": "",
 "Inventory": "",
 "Item": "",
 "MouseColor": ""
