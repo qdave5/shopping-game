@@ -5,6 +5,7 @@ var rng = RandomNumberGenerator.new()
 onready var playerSprite : Position2D = get_node("Position2D")
 onready var animationPlayer : AnimationPlayer = get_node("AnimationPlayer")
 onready var animationTree : AnimationTree = get_node("AnimationTree")
+onready var selectArea : Area2D = get_node("SelectArea")
 
 onready var characterColor : Dictionary = get_node("/root/Global").charactersColor.main_character
 onready var themeColor : Dictionary = get_node("/root/Global").MAIN_THEME
@@ -79,6 +80,9 @@ func get_input():
 		speed = SPRINTING_SPEED
 	else:
 		speed = DEFAULT_SPEED
+	
+	if Input.is_action_just_pressed("ui_interact"):
+		print(selectArea.get_overlapping_areas())
 
 func update_animation():
 	if (Time.get_ticks_msec() > blinkTime):
@@ -106,3 +110,4 @@ func doBlink():
 
 func stopBlink():
 	animationTree.set('parameters/blink/conditions/isBlink', false)
+
