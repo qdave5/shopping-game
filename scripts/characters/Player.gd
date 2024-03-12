@@ -25,6 +25,7 @@ var DEFAULT_SPEED = 300
 var SPRINTING_SPEED = 600
 var speed : int
 
+var MAX_STAMINA = 100
 var stamina : int = 100
 var isSprint : bool = false
 
@@ -111,3 +112,11 @@ func doBlink():
 func stopBlink():
 	animationTree.set('parameters/blink/conditions/isBlink', false)
 
+
+
+func _on_StaminaTimer_timeout():
+	_fillStamina(1)
+
+func _fillStamina(newStamina):
+	if stamina < MAX_STAMINA:
+		stamina += newStamina

@@ -1,20 +1,23 @@
-extends Label
+extends Control
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var seconds : int = 0
+var minutes : int = 0
+export var secondsDefault : int = 30
+export var minutesDefault : int = 2
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+	resetTimer()
 
 func _on_Timer_timeout():
-	pass # Replace with function body.
+	if seconds == 0:
+		if minutes > 0:
+			minutes -= 1
+			seconds = 60
+	seconds -= 1
+	
+	$Label.text = "{0}:{1}".format({0: "%02d" % minutes, 1: "%02d" % seconds})
+
+func resetTimer():
+	seconds = secondsDefault
+	minutes = minutesDefault

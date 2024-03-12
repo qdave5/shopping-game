@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/backgrounds/floor.png" type="Texture" id=3]
 [ext_resource path="res://assets/accessories/door.png" type="Texture" id=4]
 [ext_resource path="res://assets/tileset/offset_bg_tileset.tres" type="TileSet" id=5]
-[ext_resource path="res://scripts/controls/TimerLabel.gd" type="Script" id=6]
+[ext_resource path="res://scenes/worlds/MainUI/MainUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/items/Shelf.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/items/Desk.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/items/PaintCans.tscn" type="PackedScene" id=9]
@@ -94,29 +94,4 @@ position = Vector2( 192, 160 )
 position = Vector2( 512, 300 )
 current = true
 
-[node name="MainUI" type="Node2D" parent="."]
-
-[node name="Timer" type="Node2D" parent="MainUI"]
-position = Vector2( 904, 24 )
-scale = Vector2( 5, 5 )
-
-[node name="Label" type="Label" parent="MainUI/Timer"]
-modulate = Color( 0.941176, 0.0627451, 0.0627451, 1 )
-margin_left = -16.0
-margin_right = 20.0
-margin_bottom = 14.0
-text = "00:00"
-script = ExtResource( 6 )
-
-[node name="Timer" type="Timer" parent="MainUI/Timer"]
-wait_time = 5.0
-autostart = true
-
-[node name="EnergyBar" type="Node2D" parent="MainUI"]
-position = Vector2( 16, 16 )
-
-[node name="ColorRect" type="ColorRect" parent="MainUI/EnergyBar"]
-margin_right = 368.0
-margin_bottom = 40.0
-
-[connection signal="timeout" from="MainUI/Timer/Timer" to="MainUI/Timer/Label" method="_on_Timer_timeout"]
+[node name="MainUI" parent="." instance=ExtResource( 6 )]

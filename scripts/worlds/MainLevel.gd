@@ -1,12 +1,13 @@
 extends Node2D
 
+onready var mainTheme : Dictionary = get_node("/root/Global").MAIN_THEME
+
 onready var camera : Camera2D = get_node("Camera2D")
-onready var mainUI : Node2D = get_node("MainUI")
+onready var staminaBar : Control = get_node("MainUI/StaminaBar")
+onready var timer : Control = get_node("MainUI/TimerBar")
 onready var mainCharacter : KinematicBody2D = get_node("%main_character")
 onready var floorTexture : TextureRect = get_node("Floor")
 onready var outboundArea : TileMap = get_node("YSort/OutboundBGTileMap")
-
-onready var mainTheme : Dictionary = get_node("/root/Global").MAIN_THEME
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,4 +32,4 @@ func setCameraBound():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	camera.position = mainCharacter.position
-	mainUI.position = OS.window_size
+	staminaBar.value = mainCharacter.stamina
