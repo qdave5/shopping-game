@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://resources/Item.gd" type="Script" id=1]
+[ext_resource path="res://assets/items/potion/line.png" type="Texture" id=2]
+[ext_resource path="res://assets/items/potion/persist.png" type="Texture" id=3]
+[ext_resource path="res://assets/items/potion/color.png" type="Texture" id=4]
+
+[resource]
+script = ExtResource( 1 )
+name = "Potion"
+lineTexture = ExtResource( 2 )
+persistTexture = ExtResource( 3 )
+colorTexture = ExtResource( 4 )
+color = "white"

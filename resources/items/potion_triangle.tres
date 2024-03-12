@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://resources/Item.gd" type="Script" id=1]
+[ext_resource path="res://assets/items/potion_triangle/persist.png" type="Texture" id=2]
+[ext_resource path="res://assets/items/potion_triangle/color.png" type="Texture" id=3]
+[ext_resource path="res://assets/items/potion_triangle/line.png" type="Texture" id=4]
+
+[resource]
+script = ExtResource( 1 )
+name = "Potion Triangle"
+lineTexture = ExtResource( 4 )
+persistTexture = ExtResource( 2 )
+colorTexture = ExtResource( 3 )
+color = "white"

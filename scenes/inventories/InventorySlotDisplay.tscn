@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/inventories/InventorySlotDisplay.gd" type="Script" id=4]
+[ext_resource path="res://assets/effects/item_select_effect.png" type="Texture" id=5]
+
+[node name="InventorySlotDisplay" type="CenterContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 4 )
+
+[node name="ItemEffectTextureRect" type="TextureRect" parent="."]
+margin_left = 480.0
+margin_top = 268.0
+margin_right = 544.0
+margin_bottom = 332.0
+texture = ExtResource( 5 )
+
+[node name="ColorTextureRect" type="TextureRect" parent="."]
+margin_left = 448.0
+margin_top = 236.0
+margin_right = 576.0
+margin_bottom = 364.0
+rect_min_size = Vector2( 128, 128 )
+stretch_mode = 4
+
+[node name="PersistTextureRect" type="TextureRect" parent="."]
+margin_left = 448.0
+margin_top = 236.0
+margin_right = 576.0
+margin_bottom = 364.0
+rect_min_size = Vector2( 128, 128 )
+stretch_mode = 4
+
+[node name="LineTextureRect" type="TextureRect" parent="."]
+margin_left = 448.0
+margin_top = 236.0
+margin_right = 576.0
+margin_bottom = 364.0
+rect_min_size = Vector2( 128, 128 )
+stretch_mode = 4
+
+[connection signal="gui_input" from="." to="." method="_on_InventorySlotDisplay_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_InventorySlotDisplay_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_InventorySlotDisplay_mouse_exited"]

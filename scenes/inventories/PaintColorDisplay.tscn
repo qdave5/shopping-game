@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/inventories/PaintColorSlotDisplay.tscn" type="PackedScene" id=1]
+
+[node name="PaintColorDisplay" type="GridContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 3
+
+[node name="RedPaintColorSlotDisplay" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 339.0
+margin_bottom = 600.0
+
+[node name="YellowPaintColorSlotDisplay" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 343.0
+margin_right = 682.0
+margin_bottom = 600.0
+colour = "yellow"
+
+[node name="BluePaintColorSlotDisplay" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 686.0
+margin_right = 1024.0
+margin_bottom = 600.0
+colour = "blue"

@@ -43,4 +43,3 @@ var charactersColor = {
 		'shoesColor': 'ff2424',
 	}
 }
-
