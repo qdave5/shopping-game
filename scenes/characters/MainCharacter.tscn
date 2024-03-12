@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://assets/characters/head/hair/front_hair_3.png" type="Texture" id=1]
 [ext_resource path="res://assets/characters/head/hair/front_hair_4.png" type="Texture" id=2]
@@ -2421,6 +2421,8 @@ tracks/61/keys = {
 "values": [ 0.0, 7.0, 0.0, 7.0 ]
 }
 
+[sub_resource type="AnimationNodeTimeScale" id=23]
+
 [sub_resource type="AnimationNodeAnimation" id=16]
 animation = "blink"
 
@@ -2448,7 +2450,7 @@ start_node = "no_blink"
 animation = "idle"
 
 [sub_resource type="AnimationNodeAnimation" id=13]
-animation = "run"
+animation = "walk"
 
 [sub_resource type="AnimationNodeTransition" id=10]
 input_count = 3
@@ -2463,7 +2465,9 @@ input_2/auto_advance = false
 animation = "walk"
 
 [sub_resource type="AnimationNodeBlendTree" id=12]
-graph_offset = Vector2( -363.498, 229.378 )
+graph_offset = Vector2( -720.278, 253.23 )
+nodes/TimeScale/node = SubResource( 23 )
+nodes/TimeScale/position = Vector2( -260, 460 )
 nodes/blink/node = SubResource( 17 )
 nodes/blink/position = Vector2( -20, 500 )
 nodes/eyes_blend/node = SubResource( 8 )
@@ -2472,12 +2476,12 @@ nodes/idle/node = SubResource( 9 )
 nodes/idle/position = Vector2( -260, 220 )
 nodes/output/position = Vector2( 380, 200 )
 nodes/run/node = SubResource( 13 )
-nodes/run/position = Vector2( -260, 460 )
+nodes/run/position = Vector2( -460, 460 )
 nodes/state/node = SubResource( 10 )
 nodes/state/position = Vector2( -60, 240 )
 nodes/walk/node = SubResource( 11 )
 nodes/walk/position = Vector2( -260, 340 )
-node_connections = [ "state", 0, "idle", "state", 1, "walk", "state", 2, "run", "output", 0, "eyes_blend", "eyes_blend", 0, "state", "eyes_blend", 1, "blink" ]
+node_connections = [ "state", 0, "idle", "state", 1, "walk", "state", 2, "TimeScale", "output", 0, "eyes_blend", "eyes_blend", 0, "state", "eyes_blend", 1, "blink", "TimeScale", 0, "run" ]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=19]
 
@@ -2719,10 +2723,11 @@ anims/walk = SubResource( 14 )
 tree_root = SubResource( 12 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
+parameters/TimeScale/scale = 2.0
 parameters/blink/playback = SubResource( 19 )
 parameters/blink/conditions/isBlink = false
 parameters/eyes_blend/blend_amount = 0.5
-parameters/state/current = 1
+parameters/state/current = 2
 
 [node name="SelectArea" type="Area2D" parent="."]
 visible = false
