@@ -2,14 +2,11 @@
 
 ## TODO
 
-- Add `MainCharacter` animation (`run`)
 - Add interaction with `Item` and `PaintCan`
-- Add inventory system
-- Add change `Item` color feature
+- Add change `Item` color feature (on progress)
 - Add submit `Item` area
 - Add `Item` shopping list + randomizer
 - Add Main UI
-  - inventory
   - shopping list
   - interact button (for visual support)
   - Timer
@@ -23,6 +20,7 @@
 - Change some assets size
   - Apple
 - Completing `SideCharacter` and `CharacterIcon` Sprite
+- Add `MainCharacter` animation (`run`) (TODO)
 - Write game documentations (optional)
 - Add `TutorialLevel` (optional)
 - Add color customization (optional)
@@ -31,6 +29,14 @@
   - Color blind support (need more research)
 
 ---
+
+## [0.1.22] - 12 March 2024
+
+- Init `inventory` and `paintCan` scenes and Visuals
+- Add `Resources` to the game
+- Add **alternative** `MainCharacter` `run` animation
+- Update project window
+- Fix `potion_square` asset
 
 ## [0.1.17] - 9 March 2024
 
