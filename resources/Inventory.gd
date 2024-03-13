@@ -25,5 +25,5 @@ func remove_item(item_index):
 	if item_index < items.size():
 		var previousItem = items[item_index]
 		items.remove(item_index)
-		emit_signal("items_changed", [0,1,2,3,4,5,6,7,])
+		emit_signal("items_changed", [0,1,2,3,4,5,6,7])
 		return previousItem

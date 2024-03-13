@@ -1,5 +1,6 @@
 extends CenterContainer
 
+onready var eraseColor = get_node("/root/Global").eraseColor
 onready var globalColor : Dictionary = get_node("/root/Global").MAIN_COLOR
 var mouseColor  = preload("res://resources/MouseColor.tres")
 var inventory = preload("res://resources/Inventory.tres")
@@ -27,7 +28,10 @@ func display_item(item):
 func _on_InventorySlotDisplay_gui_input(_event):
 	if Input.is_mouse_button_pressed(1):
 		var item_index = get_index()
-		inventory.change_item_color(item_index, mouseColor.color)
+		if mouseColor.color == eraseColor:
+			inventory.remove_item(item_index)
+		else:
+			inventory.change_item_color(item_index, mouseColor.color)
 
 func _on_InventorySlotDisplay_mouse_entered():
 	itemEffectTextureRect.modulate = globalColor.success

@@ -32,6 +32,7 @@ const MAIN_COLOR = {
 	'success': Color.green,
 	'warning': Color.yellow,
 	'danger': Color.red,
+	'erase': Color.black,
 }
 
 var charactersColor = {
@@ -43,3 +44,5 @@ var charactersColor = {
 		'shoesColor': 'ff2424',
 	}
 }
+
+var eraseColor = "erase"
