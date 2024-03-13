@@ -29,10 +29,11 @@ const MAIN_COLOR = {
 	'orange': Color.orange,
 	'green': Color.green,
 	'brown': Color.brown,
+	'gray': Color.gray,
 	'success': Color.green,
 	'warning': Color.yellow,
 	'danger': Color.red,
-	'erase': Color.black,
+	'erase': Color.gray,
 }
 
 var charactersColor = {
