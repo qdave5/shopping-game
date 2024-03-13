@@ -33,3 +33,9 @@ Untuk membatasi penggunaan `run` ini, pemain diberikan _stamina bar_ yang menand
 - Krita
 
 Semua aset visual yang digunakan pada game ini menggunakan aplikasi Krita. Krita merupakan sebuah aplikasi gratis yang dapat digunakan untuk membuat ilustrasi, gambar, animasi, dan lain sebagainya.
+
+## Resources
+
+- Semua aset visual: dibuat sendiri
+- Font: https://fontmeme.com/fonts/superstar-memesbruh03-font/
+- Audio: TBA
