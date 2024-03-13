@@ -9,6 +9,8 @@ onready var selectionEffect : Sprite = get_node("%SelectionEffect")
 onready var mainColor : Dictionary = get_node("/root/Global").MAIN_COLOR
 onready var mainTheme : Dictionary = get_node("/root/Global").MAIN_THEME
 
+var inventory : Inventory = preload("res://resources/Inventory.tres")
+
 export var itemName : String = 'potion'
 export var flipH : bool = false
 
@@ -24,14 +26,35 @@ func _ready():
 func _process(delta):
 	pass
 
+func takeItem():
+	if inventory.items.size() == inventory.MAX_SIZE:
+		print("inventory is full")
+	else:
+		print("take item")
+		
+		var newItem = Item.new()
+		newItem.lineTexture = item.line_sprite.texture
+		newItem.persistTexture = item.persist_sprite.texture
+		newItem.colorTexture = item.color_sprite.texture
+		newItem.color = "white"
+		
+		inventory.add_item(newItem)
+		$AudioStreamPlayer2D.play(0)
+		
+		updateSelectionAreaColor()
 
 func _on_SelectionArea_area_entered(area):
 	if (area.name == "SelectArea"):
 		canTakeItem = not canTakeItem
-		selectionEffect.modulate = mainColor['success']
-
+		updateSelectionAreaColor()
 
 func _on_SelectionArea_area_exited(area):
 	if (area.name == "SelectArea"):
 		canTakeItem = not canTakeItem
-		selectionEffect.modulate = mainColor['white']
+		selectionEffect.modulate = mainColor.white
+
+func updateSelectionAreaColor():
+	if inventory.items.size() == inventory.MAX_SIZE:
+		selectionEffect.modulate = mainColor.danger
+	else:
+		selectionEffect.modulate = mainColor.success

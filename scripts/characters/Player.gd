@@ -87,7 +87,8 @@ func get_input():
 		print(selectArea.get_overlapping_bodies())
 		if selectArea.get_overlapping_areas().size() > 0 && selectArea.get_overlapping_bodies().size() > 0:
 			if selectArea.get_overlapping_areas()[0].name == "ShelfSelectionArea":
-				$AudioStreamPlayer2D.play(0)
+				selectArea.get_overlapping_bodies()[0].takeItem()
+				
 				print("ShelfSelectionArea")
 			elif selectArea.get_overlapping_areas()[0].name == "PaintCansSelectionArea":
 				print("PaintCansSelectionArea")

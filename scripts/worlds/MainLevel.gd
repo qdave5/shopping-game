@@ -14,8 +14,8 @@ onready var outboundArea : TileMap = get_node("YSort/OutboundBGTileMap")
 func _ready():
 	setLevelColor()
 	setCameraBound()
-
  
+
 func setLevelColor():
 	$Floor.modulate = mainTheme['summer'].level.floor
 	$YSort/OutboundBGTileMap.modulate = mainTheme['summer'].level.outbound_area
