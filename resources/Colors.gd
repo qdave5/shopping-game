@@ -25,7 +25,7 @@ func combineColor(oldColor, newColor):
 		if newColor == COLORS.RED:
 			return COLORS.PURPLE
 		elif newColor == COLORS.YELLOW:
-			return COLORS.ORANGE
+			return COLORS.GREEN
 	if oldColor == COLORS.YELLOW:
 		if newColor == COLORS.RED:
 			return COLORS.ORANGE
