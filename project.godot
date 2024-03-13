@@ -30,6 +30,11 @@ _global_script_classes=[ {
 "path": "res://resources/MouseColor.gd"
 }, {
 "base": "Resource",
+"class": "ShoppingList",
+"language": "GDScript",
+"path": "res://resources/ShoppingList.gd"
+}, {
+"base": "Resource",
 "class": "WorldLevel",
 "language": "GDScript",
 "path": "res://resources/WorldLevel.gd"
@@ -39,6 +44,7 @@ _global_script_class_icons={
 "Inventory": "",
 "Item": "",
 "MouseColor": "",
+"ShoppingList": "",
 "WorldLevel": ""
 }
 

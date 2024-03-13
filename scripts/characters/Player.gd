@@ -91,6 +91,7 @@ func get_input():
 				get_tree().call_group("MainUI", "openPaintContainer")
 				print("PaintCansSelectionArea")
 			elif selectArea.get_overlapping_areas()[0].name == "DeskSelectionArea":
+				selectArea.get_overlapping_bodies()[0].storeItems()
 				print("DeskSelectionArea")
 
 func update_animation():

@@ -32,6 +32,13 @@ tile_set = ExtResource( 5 )
 format = 1
 tile_data = PoolIntArray( -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0 )
 
+[node name="Door" type="Sprite" parent="YSort"]
+position = Vector2( 0, 344 )
+texture = ExtResource( 4 )
+
+[node name="Desk" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 192, 160 )
+
 [node name="PaintCans" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 544, 32 )
 
@@ -83,13 +90,6 @@ itemName = "potion_triangle"
 [node name="main_character" parent="YSort" instance=ExtResource( 2 )]
 unique_name_in_owner = true
 position = Vector2( 123, 293 )
-
-[node name="Door" type="Sprite" parent="YSort"]
-position = Vector2( 0, 344 )
-texture = ExtResource( 4 )
-
-[node name="Desk" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 192, 160 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 300 )
