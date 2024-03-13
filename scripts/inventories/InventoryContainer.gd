@@ -4,7 +4,7 @@ extends ColorRect
 onready var mainColor = get_node("/root/Global").MAIN_COLOR
 onready var eraseColor = get_node("/root/Global").eraseColor
 onready var paintButton = get_node("%PaintButton")
-onready var eraseButton = get_node("%PaintButton")
+onready var eraseButton = get_node("%EraseButton")
 var mouseColor : MouseColor = preload("res://resources/MouseColor.tres")
 
 var lastColor = "red"
