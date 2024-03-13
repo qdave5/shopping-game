@@ -84,6 +84,15 @@ func get_input():
 	
 	if Input.is_action_just_pressed("ui_interact"):
 		print(selectArea.get_overlapping_areas())
+		print(selectArea.get_overlapping_bodies())
+		if selectArea.get_overlapping_areas().size() > 0 && selectArea.get_overlapping_bodies().size() > 0:
+			if selectArea.get_overlapping_areas()[0].name == "ShelfSelectionArea":
+				$AudioStreamPlayer2D.play(0)
+				print("ShelfSelectionArea")
+			elif selectArea.get_overlapping_areas()[0].name == "PaintCansSelectionArea":
+				print("PaintCansSelectionArea")
+			elif selectArea.get_overlapping_areas()[0].name == "DeskSelectionArea":
+				print("DeskSelectionArea")
 
 func update_animation():
 	if (Time.get_ticks_msec() > blinkTime):

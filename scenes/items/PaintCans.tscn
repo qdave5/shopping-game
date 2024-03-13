@@ -32,7 +32,7 @@ shape = SubResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="SelectionArea" type="Area2D" parent="."]
+[node name="PaintCansSelectionArea" type="Area2D" parent="."]
 
-[node name="CollisionSelectionArea" type="CollisionShape2D" parent="SelectionArea"]
+[node name="CollisionSelectionArea" type="CollisionShape2D" parent="PaintCansSelectionArea"]
 shape = SubResource( 2 )

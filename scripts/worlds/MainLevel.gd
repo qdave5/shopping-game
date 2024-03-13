@@ -9,7 +9,6 @@ onready var mainCharacter : KinematicBody2D = get_node("%main_character")
 onready var floorTexture : TextureRect = get_node("Floor")
 onready var outboundArea : TileMap = get_node("YSort/OutboundBGTileMap")
 
-var worldLevel : int = preload("res://resources/WorldLevel.tres").level
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
