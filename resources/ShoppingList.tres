@@ -6,6 +6,7 @@
 script = ExtResource( 1 )
 listItems = [ {
 "color": "red",
+"count": 1,
 "name": "Apple"
 } ]
 storeItems = [  ]

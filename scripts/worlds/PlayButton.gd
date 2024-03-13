@@ -2,8 +2,8 @@ extends Control
 
 export var isWin : bool = false
 
-onready var worldLevel : Resource = preload("res://resources/WorldLevel.tres")
-onready var mainLevel : PackedScene = preload("res://scenes/worlds/MainLevel.tscn")
+var worldLevel : Resource = preload("res://resources/WorldLevel.tres")
+var mainLevel : PackedScene = load("res://scenes/worlds/MainLevel.tscn")
 
 
 func _on_Button_pressed():
