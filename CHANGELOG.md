@@ -10,8 +10,6 @@
 - Add Main UI
   - shopping list
   - interact button (for visual support)
-  - Timer
-  - Energy Bar
   - Pause
 - Add `LevelComplete` and `LevelFailed` scenes
 - Add some assets
@@ -31,6 +29,13 @@
   - Color blind support (need more research)
 
 ---
+
+## [0.1.30] - 13 March 2024
+
+- Fix color change in `Inventory`'s `Item`
+- Add `Stamina` and `Timer` system
+- Add font assets
+- Add win and lose Screens
 
 ## [0.1.25] - 12 March 2024
 
