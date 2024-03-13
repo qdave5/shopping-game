@@ -3,9 +3,7 @@
 ## TODO
 
 - Add interaction with `Item` and `PaintCan` (function)
-- Add area effect indicator on `PaintCan`
 - Add change `Item` color feature (on progress)
-- Add submit `Item` area
 - Add `Item` shopping list + randomizer
 - Add Main UI
   - shopping list
@@ -23,12 +21,26 @@
 - Completing `SideCharacter` Sprite (optional)
 - Write game documentations (optional)
 - Add `TutorialLevel` (optional)
+- Add keybind customization (optional)
+  - movement (up, down, left, right)
+  - interact (F)
+  - open inventory (B)
 - Add color customization (optional)
   - Some of character's body parts
   - Level theme
   - Color blind support (need more research)
 
 ---
+
+## [0.1.38] - 13 March 2024
+
+- Add sound assets (take item and bgm)
+- Add bgm into the game and sfx when interact with item
+- Add `AreaSelectionBox` for `Desk`
+- Add `takeItem()` function in `Shelf` and add `Item` to `Inventory`
+- Add `Inventory` and `Paint` UI + `open/close` animations
+- Add `erase` button for inventory's items
+- Fix `PlayButton` position
 
 ## [0.1.30] - 13 March 2024
 
