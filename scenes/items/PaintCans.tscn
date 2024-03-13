@@ -36,3 +36,6 @@ current = true
 
 [node name="CollisionSelectionArea" type="CollisionShape2D" parent="PaintCansSelectionArea"]
 shape = SubResource( 2 )
+
+[connection signal="area_entered" from="PaintCansSelectionArea" to="." method="_on_PaintCansSelectionArea_area_entered"]
+[connection signal="area_exited" from="PaintCansSelectionArea" to="." method="_on_PaintCansSelectionArea_area_exited"]

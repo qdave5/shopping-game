@@ -83,14 +83,12 @@ func get_input():
 		speed = DEFAULT_SPEED
 	
 	if Input.is_action_just_pressed("ui_interact"):
-		print(selectArea.get_overlapping_areas())
-		print(selectArea.get_overlapping_bodies())
 		if selectArea.get_overlapping_areas().size() > 0 && selectArea.get_overlapping_bodies().size() > 0:
 			if selectArea.get_overlapping_areas()[0].name == "ShelfSelectionArea":
 				selectArea.get_overlapping_bodies()[0].takeItem()
-				
 				print("ShelfSelectionArea")
 			elif selectArea.get_overlapping_areas()[0].name == "PaintCansSelectionArea":
+				get_tree().call_group("MainUI", "openPaintContainer")
 				print("PaintCansSelectionArea")
 			elif selectArea.get_overlapping_areas()[0].name == "DeskSelectionArea":
 				print("DeskSelectionArea")

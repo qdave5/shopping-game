@@ -16,3 +16,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_PaintCansSelectionArea_area_entered(area):
+	pass
+
+
+func _on_PaintCansSelectionArea_area_exited(area):
+	if area.name == "SelectArea":
+		get_tree().call_group("MainUI", "closePaintContainer")
