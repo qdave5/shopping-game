@@ -38,4 +38,7 @@ Semua aset visual yang digunakan pada game ini menggunakan aplikasi Krita. Krita
 
 - Semua aset visual: dibuat sendiri
 - Font: https://fontmeme.com/fonts/superstar-memesbruh03-font/
-- Audio: TBA
+- Audio:
+  - https://freesound.org/people/1bob/sounds/651515/
+  - https://www.youtube.com/watch?v=4a4hwDRKBJU
+  - https://www.youtube.com/@DOVASYNDROMEYouTubeOfficial
