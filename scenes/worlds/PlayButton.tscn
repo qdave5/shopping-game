@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/worlds/PlayButton.gd" type="Script" id=1]
+[ext_resource path="res://assets/controls/play_button.png" type="Texture" id=2]
+
+[node name="PlayButton" type="Button"]
+margin_left = 378.0
+margin_top = 233.0
+margin_right = 646.0
+margin_bottom = 367.0
+icon = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="." to="." method="_on_Button_pressed"]

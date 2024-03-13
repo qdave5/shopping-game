@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "MouseColor",
 "language": "GDScript",
 "path": "res://resources/MouseColor.gd"
+}, {
+"base": "Resource",
+"class": "WorldLevel",
+"language": "GDScript",
+"path": "res://resources/WorldLevel.gd"
 } ]
 _global_script_class_icons={
 "Colors": "",
 "Inventory": "",
 "Item": "",
-"MouseColor": ""
+"MouseColor": "",
+"WorldLevel": ""
 }
 
 [application]
