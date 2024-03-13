@@ -11,7 +11,8 @@ onready var mainTheme : Dictionary = get_node("/root/Global").MAIN_THEME
 
 var inventory : Inventory = preload("res://resources/Inventory.tres")
 
-export var itemName : String = 'potion'
+export var itemName : String = 'Potion'
+export var pathName : String = 'potion'
 export var flipH : bool = false
 
 var canTakeItem : bool = false
@@ -21,7 +22,7 @@ func _ready():
 	animationPlayer.play("idle")
 	shelfSprite.flip_h = flipH
 	shelfSprite.modulate = mainTheme['summer'].level.shelf
-	item.updateSpriteTexture(itemName)
+	item.updateSpriteTexture(pathName)
 
 func _process(delta):
 	pass
@@ -33,6 +34,7 @@ func takeItem():
 		print("take item")
 		
 		var newItem = Item.new()
+		newItem.name = itemName
 		newItem.lineTexture = item.line_sprite.texture
 		newItem.persistTexture = item.persist_sprite.texture
 		newItem.colorTexture = item.color_sprite.texture

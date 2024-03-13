@@ -9,8 +9,12 @@ var shoppingList = preload("res://resources/ShoppingList.tres")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(shoppingList.calculate())
-	#get_tree().change_scene_to(winScreen)
+	var isWin = shoppingList.calculate()
+	
+	if isWin:
+		get_tree().change_scene_to(winScreen)
+	else:
+		get_tree().change_scene_to(loseScreen)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

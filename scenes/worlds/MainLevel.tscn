@@ -49,21 +49,25 @@ z_as_relative = false
 
 [node name="AppleShelf" parent="YSort/Shelves/FruitShelves" instance=ExtResource( 7 )]
 position = Vector2( 464, 406 )
-itemName = "apple"
+itemName = "Apple"
+pathName = "apple"
 
 [node name="IceConeShelf" parent="YSort/Shelves/FruitShelves" instance=ExtResource( 7 )]
 position = Vector2( 190, 408 )
-itemName = "ice_cone"
+itemName = "Ice Cone"
+pathName = "ice_cone"
 flipH = true
 
 [node name="IceCreamShelf" parent="YSort/Shelves/FruitShelves" instance=ExtResource( 7 )]
 position = Vector2( 190, 504 )
-itemName = "ice_cream"
+itemName = "Ice Cream"
+pathName = "ice_cream"
 flipH = true
 
 [node name="MelonShelf" parent="YSort/Shelves/FruitShelves" instance=ExtResource( 7 )]
 position = Vector2( 464, 504 )
-itemName = "melon"
+itemName = "Melon"
+pathName = "melon"
 
 [node name="PotionShelves" type="YSort" parent="YSort/Shelves"]
 z_as_relative = false
@@ -74,16 +78,19 @@ flipH = true
 
 [node name="PotionLongShelf" parent="YSort/Shelves/PotionShelves" instance=ExtResource( 7 )]
 position = Vector2( 584, 504 )
-itemName = "potion_long"
+itemName = "Potion Long"
+pathName = "potion_long"
 flipH = true
 
 [node name="PotionSquareShelf" parent="YSort/Shelves/PotionShelves" instance=ExtResource( 7 )]
 position = Vector2( 848, 406 )
-itemName = "potion_square"
+itemName = "Potion Square"
+pathName = "potion_square"
 
 [node name="PotionTriangleShelf" parent="YSort/Shelves/PotionShelves" instance=ExtResource( 7 )]
 position = Vector2( 848, 504 )
-itemName = "potion_triangle"
+itemName = "Potion Triangle"
+pathName = "potion_triangle"
 
 [node name="main_character" parent="YSort" instance=ExtResource( 2 )]
 unique_name_in_owner = true
