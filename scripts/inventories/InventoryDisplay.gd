@@ -12,7 +12,11 @@ func update_inventory_display():
 
 func update_inventory_slot_display(item_index):
 	var inventorySlotDisplay = get_child(item_index)
-	var item = inventory.items[item_index]
+	var item
+	if item_index < inventory.items.size():
+		item = inventory.items[item_index]
+	else:
+		item = null
 	inventorySlotDisplay.display_item(item)
 
 func _on_items_changed(indexes):
