@@ -32,6 +32,10 @@
 
 ---
 
+## [0.2.3] - 13 March 2024
+
+- Try to extract the project
+
 ## [0.1.38] - 13 March 2024
 
 - Add sound assets (take item and bgm)
