@@ -32,6 +32,17 @@
 
 ---
 
+## [0.2.12] - 13 March 2024
+
+- Add border and icon assets
+- Add `erase` and `paint` button on Inventory
+- Add `storeItem()` function
+- Add `CalculationScreen` before ending the level
+- Fix `erase` function
+- Fix `Color` logic in `Inventory`
+- Fix `erase` button UI
+- Fix `Item`'s name update when calling `itemName()`
+
 ## [0.2.3] - 13 March 2024
 
 - Try to extract the project
