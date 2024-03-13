@@ -4,11 +4,12 @@
 [ext_resource path="res://assets/controls/play_button.png" type="Texture" id=2]
 
 [node name="PlayButton" type="Button"]
-margin_left = 378.0
-margin_top = 233.0
-margin_right = 646.0
-margin_bottom = 367.0
+margin_left = -128.0
+margin_top = -64.0
+margin_right = 140.0
+margin_bottom = 70.0
 icon = ExtResource( 2 )
+icon_align = 1
 script = ExtResource( 1 )
 
 [connection signal="pressed" from="." to="." method="_on_Button_pressed"]

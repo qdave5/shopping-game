@@ -112,13 +112,4 @@ parameters/playback = SubResource( 4 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="PlayButton2" parent="CenterContainer" instance=ExtResource( 2 )]
-margin_left = -132.0
-margin_top = -65.0
-margin_right = 136.0
-margin_bottom = 69.0
-icon_align = 1
+[node name="PlayButton" parent="." instance=ExtResource( 2 )]
