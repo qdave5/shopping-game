@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://resources/items/apple.tres" type="Resource" id=1]
+[ext_resource path="res://scenes/inventories/ItemListSlotDisplay.tscn" type="PackedScene" id=2]
+[ext_resource path="res://resources/items/potion_triangle.tres" type="Resource" id=3]
+[ext_resource path="res://resources/items/potion.tres" type="Resource" id=4]
+[ext_resource path="res://resources/items/melon.tres" type="Resource" id=5]
+[ext_resource path="res://resources/items/potion_long.tres" type="Resource" id=6]
+[ext_resource path="res://resources/items/potion_square.tres" type="Resource" id=7]
+[ext_resource path="res://resources/items/ice_cream.tres" type="Resource" id=8]
+[ext_resource path="res://resources/items/ice_cone.tres" type="Resource" id=9]
+
+[node name="ItemListDisplay" type="ScrollContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 400.0
+margin_bottom = 796.0
+
+[node name="ItemListSlotDisplay" parent="VBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 400.0
+margin_bottom = 96.0
+item = ExtResource( 1 )
+
+[node name="ItemListSlotDisplay8" parent="VBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 100.0
+margin_right = 400.0
+margin_bottom = 196.0
+item = ExtResource( 9 )
+
+[node name="ItemListSlotDisplay7" parent="VBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 200.0
+margin_right = 400.0
+margin_bottom = 296.0
+item = ExtResource( 8 )
+
+[node name="ItemListSlotDisplay2" parent="VBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 300.0
+margin_right = 400.0
+margin_bottom = 396.0
+item = ExtResource( 5 )
+
+[node name="ItemListSlotDisplay3" parent="VBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 400.0
+margin_right = 400.0
+margin_bottom = 496.0
+item = ExtResource( 4 )
+
+[node name="ItemListSlotDisplay4" parent="VBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 500.0
+margin_right = 400.0
+margin_bottom = 596.0
+item = ExtResource( 6 )
+
+[node name="ItemListSlotDisplay5" parent="VBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 600.0
+margin_right = 400.0
+margin_bottom = 696.0
+item = ExtResource( 7 )
+
+[node name="ItemListSlotDisplay6" parent="VBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 700.0
+margin_right = 400.0
+margin_bottom = 796.0
+item = ExtResource( 3 )

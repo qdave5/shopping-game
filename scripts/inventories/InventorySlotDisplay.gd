@@ -1,4 +1,4 @@
-extends CenterContainer
+extends Control
 
 onready var eraseColor = get_node("/root/Global").eraseColor
 onready var globalColor : Dictionary = get_node("/root/Global").MAIN_COLOR

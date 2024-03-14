@@ -21,6 +21,10 @@ var isShoppingListOpen : bool = false
 func toggleIsShoppingListOpen():
 	isShoppingListOpen = not isShoppingListOpen
 
+var isItemListOpen : bool = false
+func toggleIsItemListOpen():
+	isItemListOpen = not isItemListOpen
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$InventoryContainer/Background.modulate = mainTheme['summer'].palette4
@@ -43,6 +47,12 @@ func _process(delta):
 		else:
 			animationTree.set("parameters/ShoppingListTransition/current", animationTransitionMap.open)
 		toggleIsShoppingListOpen()
+	if Input.is_action_just_pressed("ui_open_itemlist"):
+		if isItemListOpen:
+			animationTree.set("parameters/ItemListTransition/current", animationTransitionMap.close)
+		else:
+			animationTree.set("parameters/ItemListTransition/current", animationTransitionMap.open)
+		toggleIsItemListOpen()
 
 func openPaintContainer():
 	if not isPaintOpen:
