@@ -8,5 +8,13 @@ listItems = [ {
 "color": "red",
 "count": 1,
 "name": "Apple"
+}, {
+"color": "green",
+"count": 1,
+"name": "Ice Cream"
+}, {
+"color": "yellow",
+"count": 2,
+"name": "Potion"
 } ]
 storeItems = [  ]

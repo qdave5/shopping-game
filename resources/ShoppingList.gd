@@ -3,13 +3,7 @@ class_name ShoppingList
 
 var inventory = preload("res://resources/Inventory.tres")
 
-export(Array, Dictionary) var listItems = [
-	{
-		"name": "Apple",
-		"color": "red",
-		"count": 1,
-	}
-]
+export(Array, Dictionary) var listItems = []
 export(Array, Resource) var storeItems = []
 
 func storeItems():
