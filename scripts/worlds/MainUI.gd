@@ -6,10 +6,14 @@ onready var animationPlayer : AnimationPlayer = get_node("AnimationPlayer")
 var isInventoryOpen : bool = false
 func toggleIsInventoryOpen():
 	isInventoryOpen = not isInventoryOpen
-	
+
 var isPaintOpen : bool = false
 func toggleIsPaintOpen():
 	isPaintOpen = not isPaintOpen
+
+var isShoppingListOpen : bool = false
+func toggleIsShoppingListOpen():
+	isShoppingListOpen = not isShoppingListOpen
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,6 +28,12 @@ func _process(delta):
 		else:
 			animationPlayer.play("inventory_open")
 		toggleIsInventoryOpen()
+	if Input.is_action_just_pressed("ui_open_shoppinglist"):
+		if isShoppingListOpen:
+			animationPlayer.play("shoppingList_close")
+		else:
+			animationPlayer.play("shoppingList_open")
+		toggleIsShoppingListOpen()
 
 func openPaintContainer():
 	if not isPaintOpen:
