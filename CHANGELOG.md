@@ -27,6 +27,14 @@
 
 ---
 
+## [0.3.8] - 14 March 2024
+
+- Add color in `ShoppingList`
+- Add audio in `MainUI`'s components
+- Add `DayLabel`
+- Update font
+- fix erase button area
+
 ## [0.3.0] - 14 March 2024
 
 - Add interactive button for 3 `MainUI` components
