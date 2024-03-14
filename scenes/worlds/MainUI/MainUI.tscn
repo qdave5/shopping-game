@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://scenes/worlds/MainUI/TimerBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/worlds/MainUI/StaminaBar.tscn" type="PackedScene" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://scenes/inventories/ShoppingListContainer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/inventories/ItemListContainer.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/controls/square_border.png" type="Texture" id=8]
+[ext_resource path="res://assets/icons/resource.png" type="Texture" id=9]
+[ext_resource path="res://assets/icons/list.png" type="Texture" id=10]
+[ext_resource path="res://assets/icons/bag.png" type="Texture" id=11]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -465,6 +468,9 @@ expand = true
 [node name="ShoppingListOpenButton" type="TextureButton" parent="ShoppingListContainer/ShoppingListOpenButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+texture_normal = ExtResource( 10 )
+expand = true
+stretch_mode = 5
 
 [node name="ItemListContainer" parent="." instance=ExtResource( 7 )]
 anchor_right = 0.0
@@ -484,6 +490,9 @@ expand = true
 [node name="ItemListOpenButton" type="TextureButton" parent="ItemListContainer/ItemListOpenButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+texture_normal = ExtResource( 9 )
+expand = true
+stretch_mode = 5
 
 [node name="PaintColorContainer" parent="." instance=ExtResource( 4 )]
 anchor_left = 0.5
@@ -514,6 +523,9 @@ expand = true
 [node name="InventoryOpenButton" type="TextureButton" parent="InventoryContainer/InventoryOpenButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+texture_normal = ExtResource( 11 )
+expand = true
+stretch_mode = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )

@@ -161,3 +161,4 @@ func resetStoredItems():
 func generateListItems():
 	listItems = dummyListItems[worldLevel.level]
 	emit_signal("list_items_changed")
+	# TODO: randomly generated items
