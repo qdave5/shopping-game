@@ -30,6 +30,16 @@
 
 ---
 
+## [0.2.21] - 14 March 2024
+
+- Add `Transition`
+- Add sfx when storing items
+- Add new `Item` resources
+- Add `itemList` container
+- Change 3 `MainUI` components texture
+- Update `Inventory` automatically show upon open `PaintColor`
+- Fix `MainUI`
+
 ## [0.2.20] - 14 March 2024
 
 - Init `ShoppingList` Container
