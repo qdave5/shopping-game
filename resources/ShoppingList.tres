@@ -21,4 +21,4 @@ listItems = [ {
 "count": 1,
 "name": "Potion Long"
 } ]
-storeItems = [  ]
+storedItems = [  ]

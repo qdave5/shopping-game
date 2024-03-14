@@ -4,17 +4,15 @@ class_name ShoppingList
 var inventory = preload("res://resources/Inventory.tres")
 
 export(Array, Dictionary) var listItems = []
-export(Array, Resource) var storeItems = []
+export(Array, Resource) var storedItems = []
 
 func storeItems():
 	while inventory.items.size() > 0:
 		var item = inventory.remove_item(0)
-		storeItems.append(item)
+		storedItems.append(item)
 
 func calculate():
-	
-	
-	for item in storeItems:
+	for item in storedItems:
 		for listItem in listItems:
 			print("item name :", item.name, "| item color :", item.color)
 			print("listItem :", listItem)
@@ -27,3 +25,9 @@ func calculate():
 		count += listItem.count
 	
 	return count == 0
+
+func resetStoredItems():
+	storedItems = []
+
+func generateListItems():
+	pass # TODO

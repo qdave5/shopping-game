@@ -9,11 +9,17 @@ onready var mainCharacter : KinematicBody2D = get_node("%main_character")
 onready var floorTexture : TextureRect = get_node("Floor")
 onready var outboundArea : TileMap = get_node("YSort/OutboundBGTileMap")
 
+var inventory = load("res://resources/Inventory.tres")
+var shoppingList = load("res://resources/ShoppingList.tres")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setLevelColor()
 	setCameraBound()
+	
+	inventory.reset_inventory()
+	shoppingList.resetStoredItems()
  
 
 func setLevelColor():
