@@ -69,11 +69,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="EraseTextureButton" type="TextureButton" parent="HBoxContainer/EraseButton/CenterContainer"]
-margin_left = 32.0
-margin_top = 32.0
-margin_right = 96.0
-margin_bottom = 96.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 112.0
+margin_bottom = 112.0
+rect_min_size = Vector2( 96, 96 )
 texture_normal = ExtResource( 5 )
 texture_hover = ExtResource( 3 )
+expand = true
+stretch_mode = 3
 
 [connection signal="pressed" from="HBoxContainer/EraseButton/CenterContainer/EraseTextureButton" to="." method="_on_EraseTextureButton_pressed"]
