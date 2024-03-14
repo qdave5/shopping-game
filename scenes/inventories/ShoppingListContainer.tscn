@@ -22,16 +22,21 @@ expand = true
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 8.0
-margin_right = -8.0
-margin_bottom = -8.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
 
-[node name="Label" type="Label" parent="MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+margin_right = 992.0
+margin_bottom = 568.0
+scroll_horizontal_enabled = false
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer"]
 unique_name_in_owner = true
-margin_top = 266.0
-margin_right = 1008.0
-margin_bottom = 317.0
+margin_right = 224.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 224, 0 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Test 
