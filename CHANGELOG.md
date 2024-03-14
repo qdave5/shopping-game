@@ -2,41 +2,49 @@
 
 ## TODO
 
-- Add List of Items in the store (mandatory)
-- Add `Item` shopping list + randomizer
 - Add Main UI
-  - item list (mandatory)
-  - interact button (for visual support)
   - Pause
-- Add some assets
+- Completing `GameIcon`
+- Completing `SideCharacter` Sprite (optional)
+- Add `TutorialLevel` (todo)
+- Add some assets (todo)
   - Window
   - Basket / shopping bag
   - Drinks
-- Change some assets size
-  - Apple
-- Completing `CharacterIcon`
-- Add `MainCharacter` animation (`run`) (TODO)
-- Completing `SideCharacter` Sprite (optional)
-- Write game documentations (optional)
-- Add `TutorialLevel` (optional)
-- Add keybind customization (optional)
+- Add keybind customization (todo)
   - movement (up, down, left, right)
   - interact (F)
   - open inventory (B)
-- Add color customization (optional)
+- Add color customization (todo)
   - Some of character's body parts
   - Level theme
   - Color blind support (need more research)
+- Add `Item` shopping list randomizer (todo)
+- Add result screen UI (todo)
+- Add `MainCharacter` animation (`run`) (todo)
+- Move all variables in Global.gd to Resources (todo)
+- Write game documentations (todo)
 
 ---
 
-## [0.2.21] - 14 March 2024
+## [0.3.0] - 14 March 2024
+
+- Add interactive button for 3 `MainUI` components
+- Add `dummyListitems`
+- Add new button's icon in MainUI
+- Add `EndScreen` for game demo
+- Update `ListItems` to become updateable in every level
+- Update `Stamina` and `Timer` bar texture
+- Update scrollable `ShoppingList`
+- Fix `EraseButton` visual
+
+## [0.2.29] - 14 March 2024
 
 - Add `Transition`
 - Add sfx when storing items
 - Add new `Item` resources
 - Add `itemList` container
-- Change 3 `MainUI` components texture
+- Change 3 `MainUI` components' texture
 - Update `Inventory` automatically show upon open `PaintColor`
 - Fix `MainUI`
 
