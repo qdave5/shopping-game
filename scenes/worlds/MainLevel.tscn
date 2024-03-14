@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/worlds/MainLevel.gd" type="Script" id=1]
 [ext_resource path="res://scenes/characters/MainCharacter.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://scenes/items/Desk.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/items/PaintCans.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/sounds/アトリエと電脳世界_2.mp3" type="AudioStream" id=10]
+[ext_resource path="res://scenes/effects/Transition.tscn" type="PackedScene" id=11]
 
 [node name="MainLevel" type="Node2D"]
 script = ExtResource( 1 )
@@ -106,3 +107,6 @@ current = true
 stream = ExtResource( 10 )
 volume_db = -5.0
 autoplay = true
+
+[node name="Transition" parent="." instance=ExtResource( 11 )]
+animation = "end"

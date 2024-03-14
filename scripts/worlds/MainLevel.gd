@@ -20,6 +20,8 @@ func _ready():
 	
 	inventory.reset_inventory()
 	shoppingList.resetStoredItems()
+	
+	$Transition.runAnimation()
  
 
 func setLevelColor():
