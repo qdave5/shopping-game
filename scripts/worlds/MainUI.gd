@@ -58,9 +58,15 @@ func openPaintContainer():
 	if not isPaintOpen:
 		animationTree.set("parameters/PaintColorTransition/current", animationTransitionMap.open)
 		toggleIsPaintOpen()
+		if not isInventoryOpen:
+			animationTree.set("parameters/InventoryTransition/current", animationTransitionMap.open)
+			toggleIsInventoryOpen()
 	else:
 		closePaintContainer()
 
 func closePaintContainer():
 	animationTree.set("parameters/PaintColorTransition/current", animationTransitionMap.close)
 	toggleIsPaintOpen()
+	if isInventoryOpen:
+		animationTree.set("parameters/InventoryTransition/current", animationTransitionMap.close)
+		toggleIsInventoryOpen()
