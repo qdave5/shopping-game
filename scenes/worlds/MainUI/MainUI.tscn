@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://scenes/worlds/MainUI/TimerBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/worlds/MainUI/StaminaBar.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/icons/resource.png" type="Texture" id=9]
 [ext_resource path="res://assets/icons/list.png" type="Texture" id=10]
 [ext_resource path="res://assets/icons/bag.png" type="Texture" id=11]
+[ext_resource path="res://assets/sounds/63318__flag2__page-turn-please-turn-over-pto-paper_turn_over.wav" type="AudioStream" id=12]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -552,6 +553,9 @@ parameters/ItemListTransition/current = 2
 parameters/PaintColorTransition/current = 2
 parameters/ShoppingListToItemListBlend2/blend_amount = 0.5
 parameters/ShoppingListTransition/current = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
 
 [connection signal="pressed" from="ShoppingListContainer/ShoppingListOpenButton/ShoppingListOpenButton" to="." method="_on_ShoppingListOpenButton_pressed"]
 [connection signal="pressed" from="ItemListContainer/ItemListOpenButton/ItemListOpenButton" to="." method="_on_ItemListOpenButton_pressed"]

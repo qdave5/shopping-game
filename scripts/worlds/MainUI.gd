@@ -1,6 +1,8 @@
 extends CanvasLayer
 
-onready var mainTheme = get_node("/root/Global").MAIN_THEME
+onready var mainTheme : Dictionary = get_node("/root/Global").MAIN_THEME
+
+onready var audioStream : AudioStreamPlayer2D = get_node("FlipPaperAudio")
 
 onready var animationTree : AnimationTree = get_node("AnimationTree")
 var animationTransitionMap : Dictionary = {
@@ -53,6 +55,7 @@ func toggleInventoryContainer():
 	else:
 		animationTree.set("parameters/InventoryTransition/current", animationTransitionMap.open)
 	toggleIsInventoryOpen()
+	$AudioStreamPlayer2D.play(0)
 
 func toggleShoppingListContainer():
 	if isShoppingListOpen:
@@ -60,6 +63,7 @@ func toggleShoppingListContainer():
 	else:
 		animationTree.set("parameters/ShoppingListTransition/current", animationTransitionMap.open)
 	toggleIsShoppingListOpen()
+	$AudioStreamPlayer2D.play(0)
 
 func toggleItemListContainer():
 	if isItemListOpen:
@@ -67,6 +71,7 @@ func toggleItemListContainer():
 	else:
 		animationTree.set("parameters/ItemListTransition/current", animationTransitionMap.open)
 	toggleIsItemListOpen()
+	$AudioStreamPlayer2D.play(0)
 
 
 func openPaintContainer():
