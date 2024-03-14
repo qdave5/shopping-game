@@ -1,7 +1,12 @@
 extends CanvasLayer
 
 
-onready var animationPlayer : AnimationPlayer = get_node("AnimationPlayer")
+onready var animationTree : AnimationTree = get_node("AnimationTree")
+var animationTransitionMap : Dictionary = {
+	'open': 0,
+	'close': 1,
+	'reset': 2,
+}
 
 var isInventoryOpen : bool = false
 func toggleIsInventoryOpen():
@@ -24,24 +29,24 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_open_inventory"):
 		if isInventoryOpen:
-			animationPlayer.play("inventory_close")
+			animationTree.set("parameters/InventoryTransition/current", animationTransitionMap.close)
 		else:
-			animationPlayer.play("inventory_open")
+			animationTree.set("parameters/InventoryTransition/current", animationTransitionMap.open)
 		toggleIsInventoryOpen()
 	if Input.is_action_just_pressed("ui_open_shoppinglist"):
 		if isShoppingListOpen:
-			animationPlayer.play("shoppingList_close")
+			animationTree.set("parameters/ShoppingListTransition/current", animationTransitionMap.close)
 		else:
-			animationPlayer.play("shoppingList_open")
+			animationTree.set("parameters/ShoppingListTransition/current", animationTransitionMap.open)
 		toggleIsShoppingListOpen()
 
 func openPaintContainer():
 	if not isPaintOpen:
-		animationPlayer.play("paint_color_open")
+		animationTree.set("parameters/PaintColorTransition/current", animationTransitionMap.open)
 		toggleIsPaintOpen()
 	else:
 		closePaintContainer()
 
 func closePaintContainer():
-	animationPlayer.play("paint_color_close")
+	animationTree.set("parameters/PaintColorTransition/current", animationTransitionMap.close)
 	toggleIsPaintOpen()
