@@ -9,7 +9,7 @@ onready var animationPlayer : AnimationPlayer = get_node("AnimationPlayer")
 func _ready():
 	animationPlayer.play(animation + "_transition_position")
 
-func runAnimation():
+func playAnimation():
 	print("runanimation")
 	animationPlayer.play(animation + "_transition")
 	yield(get_tree().create_timer(1.5), "timeout")
