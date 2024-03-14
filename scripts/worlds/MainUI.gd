@@ -28,31 +28,43 @@ func toggleIsItemListOpen():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$InventoryContainer/Background.modulate = mainTheme['summer'].palette4
+	$InventoryContainer/InventoryOpenButton.modulate = mainTheme['summer'].palette4
 	$PaintColorContainer/Background.modulate = mainTheme['summer'].palette4
 	$ShoppingListContainer/Background.modulate = mainTheme['summer'].palette1
+	$ShoppingListContainer/ShoppingListOpenButton.modulate = mainTheme['summer'].palette1
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("ui_open_inventory"):
-		if isInventoryOpen:
-			animationTree.set("parameters/InventoryTransition/current", animationTransitionMap.close)
-		else:
-			animationTree.set("parameters/InventoryTransition/current", animationTransitionMap.open)
-		toggleIsInventoryOpen()
+		toggleInventoryContainer()
 	if Input.is_action_just_pressed("ui_open_shoppinglist"):
-		if isShoppingListOpen:
-			animationTree.set("parameters/ShoppingListTransition/current", animationTransitionMap.close)
-		else:
-			animationTree.set("parameters/ShoppingListTransition/current", animationTransitionMap.open)
-		toggleIsShoppingListOpen()
+		toggleShoppingListContainer()
 	if Input.is_action_just_pressed("ui_open_itemlist"):
-		if isItemListOpen:
-			animationTree.set("parameters/ItemListTransition/current", animationTransitionMap.close)
-		else:
-			animationTree.set("parameters/ItemListTransition/current", animationTransitionMap.open)
-		toggleIsItemListOpen()
+		toggleItemListContainer()
+
+func toggleInventoryContainer():
+	if isInventoryOpen:
+		animationTree.set("parameters/InventoryTransition/current", animationTransitionMap.close)
+	else:
+		animationTree.set("parameters/InventoryTransition/current", animationTransitionMap.open)
+	toggleIsInventoryOpen()
+
+func toggleShoppingListContainer():
+	if isShoppingListOpen:
+		animationTree.set("parameters/ShoppingListTransition/current", animationTransitionMap.close)
+	else:
+		animationTree.set("parameters/ShoppingListTransition/current", animationTransitionMap.open)
+	toggleIsShoppingListOpen()
+
+func toggleItemListContainer():
+	if isItemListOpen:
+		animationTree.set("parameters/ItemListTransition/current", animationTransitionMap.close)
+	else:
+		animationTree.set("parameters/ItemListTransition/current", animationTransitionMap.open)
+	toggleIsItemListOpen()
+
 
 func openPaintContainer():
 	if not isPaintOpen:
@@ -70,3 +82,15 @@ func closePaintContainer():
 	if isInventoryOpen:
 		animationTree.set("parameters/InventoryTransition/current", animationTransitionMap.close)
 		toggleIsInventoryOpen()
+
+
+func _on_ItemListOpenButton_pressed():
+	toggleItemListContainer()
+
+
+func _on_ShoppingListOpenButton_pressed():
+	toggleShoppingListContainer()
+
+
+func _on_InventoryOpenButton_pressed():
+	toggleInventoryContainer()

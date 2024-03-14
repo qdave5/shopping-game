@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://scenes/worlds/MainUI/TimerBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/worlds/MainUI/StaminaBar.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scripts/worlds/MainUI.gd" type="Script" id=5]
 [ext_resource path="res://scenes/inventories/ShoppingListContainer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/inventories/ItemListContainer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/controls/square_border.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -447,15 +448,41 @@ margin_top = 0.0
 margin_right = 260.0
 margin_bottom = 32.0
 
-[node name="ItemListContainer" parent="." instance=ExtResource( 7 )]
-margin_left = -440.0
-margin_top = 80.0
-margin_right = -1032.0
-
 [node name="ShoppingListContainer" parent="." instance=ExtResource( 6 )]
 margin_left = -264.0
 margin_top = 200.0
 margin_right = -1032.0
+
+[node name="ShoppingListOpenButton" type="TextureRect" parent="ShoppingListContainer"]
+margin_left = 256.0
+margin_top = 2.0
+margin_right = 298.0
+margin_bottom = 130.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="ShoppingListOpenButton" type="TextureButton" parent="ShoppingListContainer/ShoppingListOpenButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ItemListContainer" parent="." instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -440.0
+margin_top = 80.0
+margin_right = -8.0
+margin_bottom = 600.0
+
+[node name="ItemListOpenButton" type="TextureRect" parent="ItemListContainer"]
+margin_left = 432.0
+margin_right = 474.0
+margin_bottom = 128.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="ItemListOpenButton" type="TextureButton" parent="ItemListContainer/ItemListOpenButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="PaintColorContainer" parent="." instance=ExtResource( 4 )]
 anchor_left = 0.5
@@ -474,6 +501,18 @@ margin_left = -256.0
 margin_top = 8.0
 margin_right = 256.0
 margin_bottom = 224.0
+
+[node name="InventoryOpenButton" type="TextureRect" parent="InventoryContainer"]
+margin_left = 192.0
+margin_top = -41.0
+margin_right = 320.0
+margin_bottom = 1.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="InventoryOpenButton" type="TextureButton" parent="InventoryContainer/InventoryOpenButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
@@ -501,3 +540,7 @@ parameters/ItemListTransition/current = 2
 parameters/PaintColorTransition/current = 2
 parameters/ShoppingListToItemListBlend2/blend_amount = 0.5
 parameters/ShoppingListTransition/current = 2
+
+[connection signal="pressed" from="ShoppingListContainer/ShoppingListOpenButton/ShoppingListOpenButton" to="." method="_on_ShoppingListOpenButton_pressed"]
+[connection signal="pressed" from="ItemListContainer/ItemListOpenButton/ItemListOpenButton" to="." method="_on_ItemListOpenButton_pressed"]
+[connection signal="pressed" from="InventoryContainer/InventoryOpenButton/InventoryOpenButton" to="." method="_on_InventoryOpenButton_pressed"]
