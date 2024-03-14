@@ -4,21 +4,5 @@
 
 [resource]
 script = ExtResource( 1 )
-listItems = [ {
-"color": "red",
-"count": 1,
-"name": "Apple"
-}, {
-"color": "green",
-"count": 1,
-"name": "Potion"
-}, {
-"color": "yellow",
-"count": 2,
-"name": "Potion"
-}, {
-"color": "orange",
-"count": 1,
-"name": "Potion Long"
-} ]
+listItems = [  ]
 storedItems = [  ]

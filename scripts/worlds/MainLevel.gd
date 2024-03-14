@@ -20,6 +20,7 @@ func _ready():
 	
 	inventory.reset_inventory()
 	shoppingList.resetStoredItems()
+	shoppingList.generateListItems()
 	
 	#$Transition.playAnimation()
  
