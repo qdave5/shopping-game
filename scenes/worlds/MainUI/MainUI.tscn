@@ -429,20 +429,20 @@ node_connections = [ "ShoppingListToItemListBlend2", 0, "ShoppingListTransition"
 [node name="MainUI" type="CanvasLayer"]
 script = ExtResource( 5 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HeaderContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 margin_left = 16.0
 margin_top = 32.0
 margin_right = 16.0
 margin_bottom = 64.0
 
-[node name="StaminaBar" parent="HBoxContainer" instance=ExtResource( 2 )]
+[node name="StaminaBar" parent="HeaderContainer" instance=ExtResource( 2 )]
 margin_left = 0.0
 margin_top = 0.0
 margin_right = 256.0
 margin_bottom = 32.0
 
-[node name="TimerBar" parent="HBoxContainer" instance=ExtResource( 1 )]
+[node name="TimerBar" parent="HeaderContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 260.0

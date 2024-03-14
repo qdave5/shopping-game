@@ -3,8 +3,8 @@ extends Node2D
 onready var mainTheme : Dictionary = get_node("/root/Global").MAIN_THEME
 
 onready var camera : Camera2D = get_node("Camera2D")
-onready var staminaBar : Control = get_node("MainUI/HBoxContainer/StaminaBar")
-onready var timer : Control = get_node("MainUI/HBoxContainer/TimerBar")
+onready var staminaBar : Control = get_node("MainUI/HeaderContainer/StaminaBar")
+onready var timer : Control = get_node("MainUI/HeaderContainer/TimerBar")
 onready var mainCharacter : KinematicBody2D = get_node("%main_character")
 onready var floorTexture : TextureRect = get_node("Floor")
 onready var outboundArea : TileMap = get_node("YSort/OutboundBGTileMap")

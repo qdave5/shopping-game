@@ -33,9 +33,9 @@ func _ready():
 	$ShoppingListContainer/Background.modulate = mainTheme['summer'].palette1
 	$ShoppingListContainer/ShoppingListOpenButton.modulate = mainTheme['summer'].palette1
 	
-	$HBoxContainer/StaminaBar.tint_under = mainTheme['summer'].palette4
-	$HBoxContainer/StaminaBar.tint_progress = mainTheme['summer'].palette1
-	$HBoxContainer/TimerBar.modulate = mainTheme['summer'].palette4
+	$HeaderContainer/StaminaBar.tint_under = mainTheme['summer'].palette4
+	$HeaderContainer/StaminaBar.tint_progress = mainTheme['summer'].palette1
+	$HeaderContainer/TimerBar.modulate = mainTheme['summer'].palette4
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
