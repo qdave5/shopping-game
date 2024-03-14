@@ -1,20 +1,23 @@
 extends Node
 
 
-var winScreen = preload("res://scenes/worlds/WinScreen.tscn")
-var loseScreen = preload("res://scenes/worlds/LoseScreen.tscn")
-
 var shoppingList = preload("res://resources/ShoppingList.tres")
+var worldLevel = preload("res://resources/WorldLevel.tres")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var isWin = shoppingList.calculate()
+	var path
 	
 	if isWin:
-		get_tree().change_scene_to(winScreen)
+		if worldLevel.level == 3:
+			path = "EndScreen"
+		else:
+			path = "WinScreen"
 	else:
-		get_tree().change_scene_to(loseScreen)
+		path = "LoseScreen"
+	get_tree().change_scene_to(load("res://scenes/worlds/" + path + ".tscn"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

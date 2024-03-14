@@ -9,6 +9,7 @@ margin_top = -64.0
 margin_right = 140.0
 margin_bottom = 70.0
 icon = ExtResource( 2 )
+flat = true
 icon_align = 1
 script = ExtResource( 1 )
 
