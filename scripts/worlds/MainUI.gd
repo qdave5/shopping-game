@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+onready var mainTheme = get_node("/root/Global").MAIN_THEME
 
 onready var animationTree : AnimationTree = get_node("AnimationTree")
 var animationTransitionMap : Dictionary = {
@@ -22,6 +23,9 @@ func toggleIsShoppingListOpen():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$InventoryContainer/Background.modulate = mainTheme['summer'].palette4
+	$PaintColorContainer/Background.modulate = mainTheme['summer'].palette4
+	$ShoppingListContainer/Background.modulate = mainTheme['summer'].palette1
 	pass # Replace with function body.
 
 

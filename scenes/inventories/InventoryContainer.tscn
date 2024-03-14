@@ -1,17 +1,23 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/inventories/InventoryDisplay.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/controls/round_border.png" type="Texture" id=2]
 [ext_resource path="res://assets/icons/trash_open.png" type="Texture" id=3]
 [ext_resource path="res://assets/icons/paint_brush.png" type="Texture" id=4]
 [ext_resource path="res://assets/icons/trash_close.png" type="Texture" id=5]
+[ext_resource path="res://assets/controls/square_border.png" type="Texture" id=6]
 [ext_resource path="res://scripts/inventories/InventoryContainer.gd" type="Script" id=7]
 
-[node name="InventoryContainer" type="ColorRect"]
+[node name="InventoryContainer" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.34902, 0.439216, 0.203922, 1 )
 script = ExtResource( 7 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 6 )
+expand = true
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
@@ -70,5 +76,4 @@ margin_bottom = 96.0
 texture_normal = ExtResource( 5 )
 texture_hover = ExtResource( 3 )
 
-[connection signal="pressed" from="HBoxContainer/PaintButton/CenterContainer/PaintTextureButton" to="." method="_on_PaintTextureButton_pressed"]
 [connection signal="pressed" from="HBoxContainer/EraseButton/CenterContainer/EraseTextureButton" to="." method="_on_EraseTextureButton_pressed"]

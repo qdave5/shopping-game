@@ -1,4 +1,4 @@
-extends ColorRect
+extends Control
 
 
 onready var mainColor = get_node("/root/Global").MAIN_COLOR
