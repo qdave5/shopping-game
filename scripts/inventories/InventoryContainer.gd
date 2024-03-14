@@ -15,6 +15,8 @@ func _ready():
 
 func _process(_delta):
 	paintButton.modulate = mainColor[mouseColor.color]
+	if mouseColor.color != eraseColor:
+		eraseButton.modulate = mainColor.white
 
 func _on_EraseTextureButton_pressed():
 	if mouseColor.color != eraseColor:
