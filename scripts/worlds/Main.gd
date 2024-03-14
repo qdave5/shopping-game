@@ -13,4 +13,5 @@ func _ready():
 
 
 func _on_PlayButton_pressed():
-	$Transition.playAnimation()
+	#$Transition.playAnimation()
+	pass

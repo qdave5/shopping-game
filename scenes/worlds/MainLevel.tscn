@@ -109,4 +109,5 @@ volume_db = -5.0
 autoplay = true
 
 [node name="Transition" parent="." instance=ExtResource( 11 )]
+visible = false
 animation = "end"
