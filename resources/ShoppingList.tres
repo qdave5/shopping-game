@@ -11,10 +11,14 @@ listItems = [ {
 }, {
 "color": "green",
 "count": 1,
-"name": "Ice Cream"
+"name": "Potion"
 }, {
 "color": "yellow",
 "count": 2,
 "name": "Potion"
+}, {
+"color": "orange",
+"count": 1,
+"name": "Potion Long"
 } ]
 storeItems = [  ]

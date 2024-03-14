@@ -2,6 +2,8 @@ extends ColorRect
 
 var shoppingList = load("res://resources/ShoppingList.tres")
 
+onready var labelList : Label = get_node("%Label")
+
 func _ready():
 	updateLabel()
 
@@ -15,4 +17,4 @@ func updateLabel():
 		label += "- %s %s x%d\n" % [listItem.get("color"), listItem.get("name"), listItem.get("count")]
 	
 	print(label)
-	$CenterContainer/Label.text = label
+	labelList.text = label
