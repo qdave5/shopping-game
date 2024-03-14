@@ -2,14 +2,12 @@
 
 ## TODO
 
-- Add interaction with `Item` and `PaintCan` (function)
-- Add change `Item` color feature (on progress)
+- Add List of Items in the store (mandatory)
 - Add `Item` shopping list + randomizer
 - Add Main UI
-  - shopping list
+  - item list (mandatory)
   - interact button (for visual support)
   - Pause
-- Add `LevelComplete` and `LevelFailed` scenes
 - Add some assets
   - Window
   - Basket / shopping bag
@@ -31,6 +29,16 @@
   - Color blind support (need more research)
 
 ---
+
+## [0.2.20] - 14 March 2024
+
+- Init `ShoppingList` Container
+- Add `ShoppingList` Container to `MainUI`
+- Add `AnimationTree` for `MainUI` components
+- Refactor `MainUI` `AnimationTree`
+- Fix `InventoryContainer` UI
+- Fix `ShoppingList` label UI
+- Fix reset `Inventory` and `StoredItems` upon starting the level
 
 ## [0.2.12] - 13 March 2024
 
