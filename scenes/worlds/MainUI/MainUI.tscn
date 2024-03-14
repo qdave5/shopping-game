@@ -443,9 +443,10 @@ margin_right = 256.0
 margin_bottom = 32.0
 
 [node name="TimerBar" parent="HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 260.0
-margin_top = 0.0
-margin_right = 260.0
+margin_right = 338.0
 margin_bottom = 32.0
 
 [node name="ShoppingListContainer" parent="." instance=ExtResource( 6 )]
