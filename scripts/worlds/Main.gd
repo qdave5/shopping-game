@@ -1,7 +1,7 @@
 extends Node2D
 
 
-var main_level : PackedScene = preload("res://scenes/worlds/MainLevel.tscn")
+var main_level : PackedScene = load("res://scenes/worlds/MainLevel.tscn")
 
 onready var mainBackground : Sprite = get_node("MainBackground")
 onready var playButton : Button = get_node("PlayButton")

@@ -20,15 +20,17 @@ anchor_bottom = 1.0
 [node name="InventoryDisplay" parent="CenterContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 250.0
-margin_top = 170.0
-margin_right = 774.0
-margin_bottom = 430.0
+margin_left = 314.0
+margin_top = 202.0
+margin_right = 710.0
+margin_bottom = 398.0
 
 [node name="HBoxContainer" type="VBoxContainer" parent="."]
-margin_left = -144.0
-margin_right = -16.0
+modulate = Color( 1, 1, 1, 0.498039 )
+margin_left = -112.0
+margin_right = 16.0
 margin_bottom = 260.0
+rect_scale = Vector2( 0.75, 0.75 )
 
 [node name="PaintButton" type="TextureRect" parent="HBoxContainer"]
 unique_name_in_owner = true

@@ -18,27 +18,27 @@ margin_bottom = 332.0
 texture = ExtResource( 5 )
 
 [node name="ColorTextureRect" type="TextureRect" parent="."]
-margin_left = 448.0
-margin_top = 236.0
-margin_right = 576.0
-margin_bottom = 364.0
-rect_min_size = Vector2( 128, 128 )
+margin_left = 464.0
+margin_top = 252.0
+margin_right = 560.0
+margin_bottom = 348.0
+rect_min_size = Vector2( 96, 96 )
 stretch_mode = 4
 
 [node name="PersistTextureRect" type="TextureRect" parent="."]
-margin_left = 448.0
-margin_top = 236.0
-margin_right = 576.0
-margin_bottom = 364.0
-rect_min_size = Vector2( 128, 128 )
+margin_left = 464.0
+margin_top = 252.0
+margin_right = 560.0
+margin_bottom = 348.0
+rect_min_size = Vector2( 96, 96 )
 stretch_mode = 4
 
 [node name="LineTextureRect" type="TextureRect" parent="."]
-margin_left = 448.0
-margin_top = 236.0
-margin_right = 576.0
-margin_bottom = 364.0
-rect_min_size = Vector2( 128, 128 )
+margin_left = 464.0
+margin_top = 252.0
+margin_right = 560.0
+margin_bottom = 348.0
+rect_min_size = Vector2( 96, 96 )
 stretch_mode = 4
 
 [connection signal="gui_input" from="." to="." method="_on_InventorySlotDisplay_gui_input"]
