@@ -86,16 +86,15 @@ func get_input():
 		if selectArea.get_overlapping_areas().size() > 0 && selectArea.get_overlapping_bodies().size() > 0:
 			if selectArea.get_overlapping_areas()[0].name == "ShelfSelectionArea":
 				selectArea.get_overlapping_bodies()[0].takeItem()
-				print("ShelfSelectionArea")
+				
 			elif selectArea.get_overlapping_areas()[0].name == "PaintCansSelectionArea":
 				get_tree().call_group("MainUI", "openPaintContainer")
-				print("PaintCansSelectionArea")
+				
 			elif selectArea.get_overlapping_areas()[0].name == "DeskSelectionArea":
 				selectArea.get_overlapping_bodies()[0].storeItems()
-				print("DeskSelectionArea")
+				
 			elif selectArea.get_overlapping_areas()[0].name == "DoorSelectionArea":
 				selectArea.get_overlapping_bodies()[0].endLevel()
-				print("DoorSelectionArea")
 
 func update_animation():
 	if (Time.get_ticks_msec() > blinkTime):

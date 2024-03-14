@@ -13,12 +13,9 @@ func updateLabel(listItems):
 	var label = ""
 	
 	for listItem in listItems:
-		print("listItem", listItem)
 		label += "- %s %s x%d\n" % [listItem.get("color"), listItem.get("name"), listItem.get("count")]
-	
-	print("label ", label)
+
 	labelList.text = label
 
 func _on_list_items_changed():
-	print("on item list changed")
 	updateLabel(shoppingList.listItems)

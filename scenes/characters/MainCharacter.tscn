@@ -2481,7 +2481,7 @@ nodes/state/node = SubResource( 10 )
 nodes/state/position = Vector2( -60, 240 )
 nodes/walk/node = SubResource( 11 )
 nodes/walk/position = Vector2( -260, 340 )
-node_connections = [ "TimeScale", 0, "run", "eyes_blend", 0, "state", "eyes_blend", 1, "blink", "state", 0, "idle", "state", 1, "walk", "state", 2, "TimeScale", "output", 0, "eyes_blend" ]
+node_connections = [ "eyes_blend", 0, "state", "eyes_blend", 1, "blink", "TimeScale", 0, "run", "state", 0, "idle", "state", 1, "walk", "state", 2, "TimeScale", "output", 0, "eyes_blend" ]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=19]
 

@@ -24,15 +24,11 @@ func _ready():
 	shelfSprite.modulate = mainTheme['summer'].level.shelf
 	item.updateSpriteTexture(pathName)
 
-func _process(delta):
-	pass
+#func _process(delta):
+#	pass
 
 func takeItem():
-	if inventory.items.size() == inventory.MAX_SIZE:
-		print("inventory is full")
-	else:
-		print("take item")
-		
+	if inventory.items.size() != inventory.MAX_SIZE:
 		var newItem = Item.new()
 		newItem.name = itemName
 		newItem.lineTexture = item.line_sprite.texture

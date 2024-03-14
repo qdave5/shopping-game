@@ -32,11 +32,10 @@ func _ready():
 	$PaintColorContainer/Background.modulate = mainTheme['summer'].palette4
 	$ShoppingListContainer/Background.modulate = mainTheme['summer'].palette1
 	$ShoppingListContainer/ShoppingListOpenButton.modulate = mainTheme['summer'].palette1
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_open_inventory"):
 		toggleInventoryContainer()
 	if Input.is_action_just_pressed("ui_open_shoppinglist"):
@@ -87,10 +86,8 @@ func closePaintContainer():
 func _on_ItemListOpenButton_pressed():
 	toggleItemListContainer()
 
-
 func _on_ShoppingListOpenButton_pressed():
 	toggleShoppingListContainer()
-
 
 func _on_InventoryOpenButton_pressed():
 	toggleInventoryContainer()
