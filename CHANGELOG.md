@@ -2,6 +2,9 @@
 
 ## TODO
 
+- Change turn page sfx
+- Add a `Cat` ('cuz why not) + meowing
+- Add a `CounterPerson` (dummy for now)
 - Add Main UI
   - Pause
 - Completing `GameIcon`
@@ -26,6 +29,15 @@
 - Write game documentations (todo)
 
 ---
+
+## [0.3.25] - 15 March 2024
+
+- Add `Plant`
+- Add `Cat` ('cuz why not)
+- Add icon in `Main` Screen
+- Update `DayLabel` and change `MainUI` sfx interaction
+- Fix can't click button when start (`DayLabel`)
+- Fix energy consumption when `Character` is not moving
 
 ## [0.3.8] - 14 March 2024
 
