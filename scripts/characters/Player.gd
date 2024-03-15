@@ -76,7 +76,7 @@ func _physics_process(_delta):
 	velocity = move_and_slide(direction * speed)
 
 func get_input():
-	if Input.is_action_pressed("ui_sprint") and stamina > 0:
+	if Input.is_action_pressed("ui_sprint") and stamina > 0 and direction != Vector2.ZERO:
 		stamina -= 1
 		speed = SPRINTING_SPEED
 	else:
