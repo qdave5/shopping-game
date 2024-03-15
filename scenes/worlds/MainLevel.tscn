@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/worlds/MainLevel.gd" type="Script" id=1]
 [ext_resource path="res://scenes/characters/MainCharacter.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/sounds/アトリエと電脳世界_2.mp3" type="AudioStream" id=10]
 [ext_resource path="res://scenes/effects/Transition.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/effects/DayLabel.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/items/Plant.tscn" type="PackedScene" id=13]
 
 [node name="MainLevel" type="Node2D"]
 script = ExtResource( 1 )
@@ -93,6 +94,20 @@ pathName = "potion_square"
 position = Vector2( 848, 504 )
 itemName = "Potion Triangle"
 pathName = "potion_triangle"
+
+[node name="Plants" type="YSort" parent="YSort"]
+
+[node name="Plant" parent="YSort/Plants" instance=ExtResource( 13 )]
+position = Vector2( 43, 44 )
+
+[node name="Plant2" parent="YSort/Plants" instance=ExtResource( 13 )]
+position = Vector2( 1032, 44 )
+
+[node name="Plant3" parent="YSort/Plants" instance=ExtResource( 13 )]
+position = Vector2( 1032, 664 )
+
+[node name="Plant4" parent="YSort/Plants" instance=ExtResource( 13 )]
+position = Vector2( 43, 664 )
 
 [node name="main_character" parent="YSort" instance=ExtResource( 2 )]
 unique_name_in_owner = true
