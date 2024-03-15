@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/worlds/MainLevel.gd" type="Script" id=1]
 [ext_resource path="res://scenes/characters/MainCharacter.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://scenes/effects/Transition.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/effects/DayLabel.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/items/Plant.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/characters/Cat.tscn" type="PackedScene" id=14]
 
 [node name="MainLevel" type="Node2D"]
 script = ExtResource( 1 )
@@ -39,6 +40,10 @@ tile_data = PoolIntArray( -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 
 
 [node name="Desk" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 192, 160 )
+
+[node name="Cat" parent="YSort/Desk" instance=ExtResource( 14 )]
+position = Vector2( -98, -49.75 )
+scale = Vector2( 0.6, 0.8 )
 
 [node name="PaintCans" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 544, 32 )

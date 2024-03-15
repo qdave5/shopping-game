@@ -29,8 +29,8 @@ func setLevelColor():
 	$Floor.modulate = mainTheme['summer'].level.floor
 	$YSort/OutboundBGTileMap.modulate = mainTheme['summer'].level.outbound_area
 	$YSort/WallBGTileMap.modulate = mainTheme['summer'].level.wall
-	$YSort/Door.modulate = mainTheme['summer'].level.door
-	$YSort/Desk.modulate = mainTheme['summer'].level.desk
+	$YSort/Door/DoorSprite.modulate = mainTheme['summer'].level.door
+	$YSort/Desk/DeskSprite.modulate = mainTheme['summer'].level.desk
 
 func setCameraBound():
 	camera.limit_left = - 100
