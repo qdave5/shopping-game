@@ -79,6 +79,7 @@ tracks/2/keys = {
 [node name="DayLabel" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -88,6 +89,7 @@ margin_left = -1280.0
 margin_top = 64.0
 margin_right = 2048.0
 margin_bottom = 192.0
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="ColorRect"]
 anchor_left = 0.5
