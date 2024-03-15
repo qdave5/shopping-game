@@ -11,7 +11,7 @@
 [ext_resource path="res://assets/icons/resource.png" type="Texture" id=9]
 [ext_resource path="res://assets/icons/list.png" type="Texture" id=10]
 [ext_resource path="res://assets/icons/bag.png" type="Texture" id=11]
-[ext_resource path="res://assets/sounds/63318__flag2__page-turn-please-turn-over-pto-paper_turn_over.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/sounds/136778__davidbain__page-turn.wav" type="AudioStream" id=12]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -429,7 +429,7 @@ nodes/shopping_list_open/node = SubResource( 23 )
 nodes/shopping_list_open/position = Vector2( 116.749, 638.002 )
 nodes/shopping_list_reset/node = SubResource( 33 )
 nodes/shopping_list_reset/position = Vector2( -120, 720 )
-node_connections = [ "ShoppingListToItemListBlend2", 0, "ShoppingListTransition", "ShoppingListToItemListBlend2", 1, "ItemListTransition", "ItemListTransition", 0, "item_list_open", "ItemListTransition", 1, "item_list_close", "ItemListTransition", 2, "item_list_reset", "InventoryToPaintColorBlend2", 0, "InventoryTransition", "InventoryToPaintColorBlend2", 1, "PaintColorTransition", "PaintColorTransition", 0, "paint_color_open", "PaintColorTransition", 1, "paint_color_close", "PaintColorTransition", 2, "paint_color_reset", "ShoppingListTransition", 0, "shopping_list_open", "ShoppingListTransition", 1, "shopping_list_close", "ShoppingListTransition", 2, "shopping_list_reset", "Final Blend2", 0, "InventoryToPaintColorBlend2", "Final Blend2", 1, "ShoppingListToItemListBlend2", "InventoryTransition", 0, "inventory_open", "InventoryTransition", 1, "inventory_close", "InventoryTransition", 2, "inventory_reset", "output", 0, "Final Blend2" ]
+node_connections = [ "output", 0, "Final Blend2", "ShoppingListToItemListBlend2", 0, "ShoppingListTransition", "ShoppingListToItemListBlend2", 1, "ItemListTransition", "ShoppingListTransition", 0, "shopping_list_open", "ShoppingListTransition", 1, "shopping_list_close", "ShoppingListTransition", 2, "shopping_list_reset", "ItemListTransition", 0, "item_list_open", "ItemListTransition", 1, "item_list_close", "ItemListTransition", 2, "item_list_reset", "Final Blend2", 0, "InventoryToPaintColorBlend2", "Final Blend2", 1, "ShoppingListToItemListBlend2", "InventoryToPaintColorBlend2", 0, "InventoryTransition", "InventoryToPaintColorBlend2", 1, "PaintColorTransition", "InventoryTransition", 0, "inventory_open", "InventoryTransition", 1, "inventory_close", "InventoryTransition", 2, "inventory_reset", "PaintColorTransition", 0, "paint_color_open", "PaintColorTransition", 1, "paint_color_close", "PaintColorTransition", 2, "paint_color_reset" ]
 
 [node name="MainUI" type="CanvasLayer"]
 script = ExtResource( 5 )

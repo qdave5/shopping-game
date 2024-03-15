@@ -55,7 +55,7 @@ func toggleInventoryContainer():
 	else:
 		animationTree.set("parameters/InventoryTransition/current", animationTransitionMap.open)
 	toggleIsInventoryOpen()
-	$AudioStreamPlayer2D.play(0)
+	playAudioComponents()
 
 func toggleShoppingListContainer():
 	if isShoppingListOpen:
@@ -63,7 +63,7 @@ func toggleShoppingListContainer():
 	else:
 		animationTree.set("parameters/ShoppingListTransition/current", animationTransitionMap.open)
 	toggleIsShoppingListOpen()
-	$AudioStreamPlayer2D.play(0)
+	playAudioComponents()
 
 func toggleItemListContainer():
 	if isItemListOpen:
@@ -71,8 +71,12 @@ func toggleItemListContainer():
 	else:
 		animationTree.set("parameters/ItemListTransition/current", animationTransitionMap.open)
 	toggleIsItemListOpen()
-	$AudioStreamPlayer2D.play(0)
+	playAudioComponents()
 
+
+func playAudioComponents():
+	$AudioStreamPlayer2D.play(0.5)
+	
 
 func openPaintContainer():
 	if not isPaintOpen:
